@@ -55,7 +55,7 @@ public abstract class GEDCOMLine {
     /**
      * Given a tag, this function returns true if the tag is valid, and false otherwise.
      * 
-     * @param tag The tag to validate.
+     * @param str The tag to validate.
      * @return True if the tag is valid, and false otherwise.
      */
     public static boolean isValidTag(String str) {

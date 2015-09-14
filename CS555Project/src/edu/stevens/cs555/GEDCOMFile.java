@@ -36,7 +36,8 @@ public class GEDCOMFile extends File {
 
     /**
      * Returns the lines read from the file if it was successfully opened.
-     * @return
+     * 
+     * @return The ArrayList of GEDCOM lines.
      */
     public ArrayList<GEDCOMLine> getGedcomLines() {
 	return this.gedcom_lines;

@@ -23,6 +23,7 @@ public class GEDCOMLineWithArgs extends GEDCOMLine {
      * 
      * @param level The level of the GEDCOM line.
      * @param tag The tag of the GEDCOM line.
+     * @param arguments The ArrayList of arguments for the GEDCOMLine.
      */
     public GEDCOMLineWithArgs(int level, String tag, ArrayList<String> arguments) {
 	this.setLevel(level);

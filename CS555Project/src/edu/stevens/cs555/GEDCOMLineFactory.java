@@ -41,7 +41,7 @@ public class GEDCOMLineFactory {
      * 
      * @param level The level of the line.
      * @param tag The tag of the line.
-     * @param arguments The arguments of the GEDCOM line separated by white space.
+     * @param args The arguments of the GEDCOM line separated by white space.
      * @return The resulting GEDCOMLine instance.
      */
     public GEDCOMLine createGEDCOMLineWithArgs(int level, String tag, ArrayList<String> args) {
@@ -53,7 +53,7 @@ public class GEDCOMLineFactory {
      * 
      * @param xref_id The XREF ID of the line.
      * @param tag The tag of the line.
-     * @return
+     * @return The resulting GEDCOMLine instance.
      */
     public GEDCOMLine createGEDCOMLineWithXref(String xref_id, String tag) {
 	return new GEDCOMLineWithXref(xref_id, tag);
