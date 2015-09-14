@@ -2,6 +2,7 @@ package edu.stevens.cs555;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * The executable class for executing the command line interface for reading GEDCOM files.
@@ -20,7 +21,7 @@ public class GEDCOMReader {
 	System.out.println("ERROR: " + msg);
 	System.exit(0);
     }
-    
+
     /**
      * Prints the usage for the program, and then exists.
      */
@@ -37,17 +38,21 @@ public class GEDCOMReader {
     public static void main(String[] args) {
 	if(args.length <= 0)
 	    usage();
-	
+
 	GEDCOMFile gedcom_file = new GEDCOMFile(args[0]);
+	ArrayList<GEDCOMLine> gedcom_lines = new ArrayList<GEDCOMLine>();
 	try {
-	    System.out.println("Reading GEDCOM file at " + gedcom_file.getAbsolutePath() + "...");
-	    gedcom_file.read();
-	    System.out.println("Finished reading the GEDCOM file. Now printing the contents...");
+	    System.out.println("Reading GEDCOM file at \"" + gedcom_file.getAbsolutePath() + "\"...");
+	    gedcom_lines = gedcom_file.read();
 	} catch(FileNotFoundException e) {
-	    error("The GEDCOM file at " + gedcom_file.getAbsolutePath() + " was not found!");
+	    error("The GEDCOM file at \"" + gedcom_file.getAbsolutePath() + "\" was not found!");
 	} catch(IOException e) {
-	    error("The GEDCOM file at " + gedcom_file.getAbsolutePath() + " could not be read from! (" + e.getMessage() + ")");
+	    error("The GEDCOM file at \"" + gedcom_file.getAbsolutePath() + "\" could not be read from! (" + e.getMessage() + ")");
 	}
+
+	System.out.println("Finished reading the GEDCOM file. Now printing the contents...\n");
+	for(GEDCOMLine line : gedcom_lines)
+	    System.out.println(line + "\n");
     }
 
 }
