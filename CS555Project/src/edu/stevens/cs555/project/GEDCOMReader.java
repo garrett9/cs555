@@ -1,4 +1,4 @@
-package edu.stevens.cs555;
+package edu.stevens.cs555.project;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

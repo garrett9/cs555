@@ -1,7 +1,7 @@
 /**
  * 
  */
-package edu.stevens.cs555;
+package edu.stevens.cs555.project;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package edu.stevens.cs555;
+package edu.stevens.cs555.project;
 
 /**
  * A class representation of a GEDCOMLine with an Xred ID.
