@@ -72,7 +72,7 @@ public abstract class GEDCOMLine {
      * @return True if the XREF ID is valid, and false otherwise.
      */
     public static boolean isValidXrefId(String xref_id) {
-	String regex = "@.+@";
+	String regex = "@[F|I]\\d+@";
 	Pattern pattern = Pattern.compile(regex);
 	Matcher m = pattern.matcher(xref_id);
 	if(m.matches())

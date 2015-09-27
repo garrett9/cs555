@@ -67,6 +67,25 @@ public class GEDCOMLineWithArgs extends GEDCOMLine {
     }
     
     /**
+     * Returns the arguments to the line separated by white space.
+     * 
+     * @return The arguments of the line separated by white space.
+     */
+    public String getArgsAsString() {
+	return this.getArgsAsString(" ");
+    }
+    
+    /**
+     * Returns the arguments to the line separated by a specified delimiter.
+     * 
+     * @param delimiter The delimiter to separate the arguments by.
+     * @return The joined string.
+     */
+    public String getArgsAsString(String delimiter) {
+	return String.join(delimiter, this.args);
+    }
+    
+    /**
      * Returns the string representation of the GEDCOMLineWithArgs.
      * 
      * @return The String representation.

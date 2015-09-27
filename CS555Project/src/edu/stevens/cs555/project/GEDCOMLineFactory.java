@@ -31,7 +31,6 @@ public class GEDCOMLineFactory {
 	    if(splits.length >= 3)
 		for(int i = 2; i < splits.length; i++)
 		    args.add(splits[i]);
-	    // TODO Error checking on integer parse
 	    return createGEDCOMLineWithArgs(Integer.parseInt(splits[0]), splits[1], args);
 	}
     }
