@@ -195,6 +195,18 @@ public class GEDCOMReader {
 
 	System.out.println(Arrays.toString(individuals));
 	System.out.println(Arrays.toString(families));
+	
+	Rule[] rules = 
+		{
+			new Under150()
+		};
+	
+	System.out.println("Applying rules...");
+	
+	for(int i = 0; i < rules.length; i++) { 
+		rules[i].test(families, individuals);
+	}
+	
     }
 
 }
