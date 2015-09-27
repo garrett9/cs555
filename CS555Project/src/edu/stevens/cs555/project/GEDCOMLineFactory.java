@@ -20,19 +20,19 @@ public class GEDCOMLineFactory {
      * @return The resulting GEDCOMLine instance. If less than 2 arguments were given, then NULL will be returned.
      */
     public GEDCOMLine createGEDCOMLineFromLine(String line) {
-	String[] splits = line.split(" ");
-	if(splits.length < 2)
-	    return null;
+        String[] splits = line.split(" ");
+        if(splits.length < 2)
+            return null;
 
-	if(GEDCOMLine.isValidXrefId(splits[1]))
-	    return createGEDCOMLineWithXref(splits[1], splits[2]);
-	else {
-	    ArrayList<String> args = new ArrayList<String>();
-	    if(splits.length >= 3)
-		for(int i = 2; i < splits.length; i++)
-		    args.add(splits[i]);
-	    return createGEDCOMLineWithArgs(Integer.parseInt(splits[0]), splits[1], args);
-	}
+        if(GEDCOMLine.isValidXrefId(splits[1]))
+            return createGEDCOMLineWithXref(splits[1], splits[2]);
+        else {
+            ArrayList<String> args = new ArrayList<String>();
+            if(splits.length >= 3)
+                for(int i = 2; i < splits.length; i++)
+                    args.add(splits[i]);
+            return createGEDCOMLineWithArgs(Integer.parseInt(splits[0]), splits[1], args);
+        }
     }
     
     /**
@@ -44,7 +44,7 @@ public class GEDCOMLineFactory {
      * @return The resulting GEDCOMLine instance.
      */
     public GEDCOMLine createGEDCOMLineWithArgs(int level, String tag, ArrayList<String> args) {
-	return new GEDCOMLineWithArgs(level, tag, args);
+        return new GEDCOMLineWithArgs(level, tag, args);
     }
     
     /**
@@ -55,6 +55,6 @@ public class GEDCOMLineFactory {
      * @return The resulting GEDCOMLine instance.
      */
     public GEDCOMLine createGEDCOMLineWithXref(String xref_id, String tag) {
-	return new GEDCOMLineWithXref(xref_id, tag);
+        return new GEDCOMLineWithXref(xref_id, tag);
     }
 }

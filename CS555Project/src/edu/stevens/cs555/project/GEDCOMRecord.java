@@ -22,7 +22,7 @@ public abstract class GEDCOMRecord {
      * @param id The ID of the GEDCOM record.
      */
     public GEDCOMRecord(int id) {
-	this.id = id;
+        this.id = id;
     }
     
     /**
@@ -31,7 +31,7 @@ public abstract class GEDCOMRecord {
      * @return The ID of the record.
      */
     public int getId() {
-	return this.id;
+        return this.id;
     }
     
     
@@ -44,11 +44,11 @@ public abstract class GEDCOMRecord {
      * @return int The numeric XREF ID
      */
     protected static int getNumericIdFromXrefId(String xref_id, String regex) throws GEDCOMParseException {
-	Pattern pattern = Pattern.compile(regex);
-	Matcher m = pattern.matcher(xref_id);
-	if(m.matches()) 
-	    return Integer.parseInt(m.group(1));
+        Pattern pattern = Pattern.compile(regex);
+        Matcher m = pattern.matcher(xref_id);
+        if(m.matches()) 
+            return Integer.parseInt(m.group(1));
 
-	throw new GEDCOMParseException("Invalid XREF ID of \"" + xref_id + "\"");
+        throw new GEDCOMParseException("Invalid XREF ID of \"" + xref_id + "\"");
     }
 }

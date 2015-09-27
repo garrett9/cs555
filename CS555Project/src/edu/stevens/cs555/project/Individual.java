@@ -54,7 +54,7 @@ public class Individual extends GEDCOMRecord {
      * @param id The ID of the individual.
      */
     public Individual(int id) {
-	super(id);
+        super(id);
     }
     
     /**
@@ -173,7 +173,7 @@ public class Individual extends GEDCOMRecord {
      * @throws GEDCOMParseException If the numeric ID has an invalid format.
      */
     public static int getNumericIdFromXrefId(String xref_id) throws GEDCOMParseException {
-	return getNumericIdFromXrefId(xref_id, XREF_FORMAT);
+        return getNumericIdFromXrefId(xref_id, XREF_FORMAT);
     }
     
     /**
@@ -184,7 +184,7 @@ public class Individual extends GEDCOMRecord {
      * @throws GEDCOMParseException if the xref_id is invalid.
      */
     public static Individual createFromXrefId(String xref_id) throws GEDCOMParseException {
-	return new Individual(getNumericIdFromXrefId(xref_id));
+        return new Individual(getNumericIdFromXrefId(xref_id));
     }
 
     /* (non-Javadoc)
@@ -192,8 +192,8 @@ public class Individual extends GEDCOMRecord {
      */
     @Override
     public String toString() {
-	return getClass().getName() + " {\n\tname: " + name + "\n\tsex: " + sex
-		+ "\n\tfamc: " + famc + "\n\tfams: " + fams + "\n\tbirt: "
-		+ birt + "\n\tdeat: " + deat + "\n\tid: " + id + "\n}\n";
+        return getClass().getName() + " {\n\tname: " + name + "\n\tsex: " + sex
+            + "\n\tfamc: " + famc + "\n\tfams: " + fams + "\n\tbirt: "
+            + birt + "\n\tdeat: " + deat + "\n\tid: " + id + "\n}\n";
     }
 }
