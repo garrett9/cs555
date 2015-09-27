@@ -36,6 +36,16 @@ public class Family extends GEDCOMRecord {
     private ArrayList<Integer> children;
     
     /**
+     * The MARRIAGE date for the family.
+     */
+    private String marr;
+    
+    /**
+     * The DIVORCE date for the family.
+     */
+    private String div;
+    
+    /**
      * Create a new Family instance given its ID.
      * 
      * @param id The ID of the family.
@@ -98,6 +108,42 @@ public class Family extends GEDCOMRecord {
     }
     
     /**
+     * Get the marriage date for the family.
+     * 
+     * @return The marriage date for the family.
+     */
+    public String getMarr() {
+	return this.marr;
+    }
+    
+    /**
+     * Set the marriage date for the family.
+     * 
+     * @param marr The marriage date for the family.
+     */
+    public void setMarr(String marr) {
+	this.marr = marr;
+    }
+    
+    /**
+     * Get the divorce date for the family.
+     * 
+     * @return The divorce date for the family.
+     */
+    public String getDiv() {
+	return this.div;
+    }
+    
+    /**
+     * Set the divorce date for the family.
+     * 
+     * @param div The divorce date for the family.
+     */
+    public void setDiv(String div) {
+	this.div = div;
+    }
+    
+    /**
      * Extract the numeric ID from an Family record's XREF ID.
      * 
      * @param xref_id The XREF ID of the record.
@@ -125,6 +171,7 @@ public class Family extends GEDCOMRecord {
     @Override
     public String toString() {
 	return getClass().getName() + " {\n\thusb: " + husb + "\n\twife: "
-		+ wife + "\n\tchildren: " + children + "\n}\n";
-    } 
+		+ wife + "\n\tchildren: " + children + "\n\tmarr: " + marr
+		+ "\n\tdiv: " + div + "\n\tid: " + id + "\n}\n";
+    }
 }

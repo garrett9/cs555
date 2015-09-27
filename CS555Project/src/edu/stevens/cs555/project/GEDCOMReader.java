@@ -53,7 +53,6 @@ public class GEDCOMReader {
 
 	Individual[] individuals = new Individual[5000];
 	Family[] families = new Family[1000];
-	// Now that we have each line from the GEDCOM file, we will loop through it in order to separate the data into individuals and familes.
 
 	/*
 	 * The try/catch block checks for a valid XREF ID when creating the correct type of record (Family/Individual)
@@ -62,7 +61,9 @@ public class GEDCOMReader {
 
 	    GEDCOMRecord last_record = null;
 
-	    for(GEDCOMLine line : gedcom_lines) {
+	    for(int i = 0; i < gedcom_lines.size(); i++) {
+		GEDCOMLine line = gedcom_lines.get(i);
+		
 		// If the line is an instance of GEDCOMLineWithXref, then it's the start of a set of lines belonging to either a Family or Individual.
 		if(line instanceof GEDCOMLineWithXref) {
 
@@ -113,7 +114,12 @@ public class GEDCOMReader {
 
 			if(tag.equals("marr")) { // A marriage event for the family
 
-			    //TODO implement getting marriage date
+			    // If we hit MARR, then the next line is the date we're looking for
+			    GEDCOMLineWithArgs date_line = (GEDCOMLineWithArgs)gedcom_lines.get(i + 1);
+			    family.setMarr(date_line.getArgsAsString());
+			    
+			    // Since we already read the next line, we skip it by incrementing the count
+			    i++;
 
 			} else if(tag.equals("husb")) { // The husband identifier for the family
 
@@ -129,7 +135,12 @@ public class GEDCOMReader {
 
 			} else if(tag.equals("div")) { // A divorce event for the family
 
-			    // TODO implement getting divorce date
+			    // If we hit MARR, then the next line is the date we're looking for
+			    GEDCOMLineWithArgs date_line = (GEDCOMLineWithArgs)gedcom_lines.get(i + 1);
+			    family.setDiv(date_line.getArgsAsString());
+			    
+			    // Since we already read the next line, we skip it by incrementing the count
+			    i++;
 
 			}
 
@@ -148,11 +159,22 @@ public class GEDCOMReader {
 
 			} else if(tag.equals("birt")) { // Birth date of the individual
 
-			    //TODO implement getting birth date
+			    // If we hit MARR, then the next line is the date we're looking for
+			    GEDCOMLineWithArgs date_line = (GEDCOMLineWithArgs)gedcom_lines.get(i + 1);
+			    System.out.println(date_line);
+			    individual.setBirt(date_line.getArgsAsString());
+			    
+			    // Since we already read the next line, we skip it by incrementing the count
+			    i++;
 
 			} else if(tag.equals("deat")) { // Death date of the individual
 
-			    //TODO implement getting death date
+			    // If we hit MARR, then the next line is the date we're looking for
+			    GEDCOMLineWithArgs date_line = (GEDCOMLineWithArgs)gedcom_lines.get(i + 1);
+			    individual.setDeat(date_line.getArgsAsString());
+			    
+			    // Since we already read the next line, we skip it by incrementing the count
+			    i++;
 
 			} else if(tag.equals("famc")) { // Family ID the individual is a child to
 

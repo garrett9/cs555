@@ -39,6 +39,16 @@ public class Individual extends GEDCOMRecord {
     private int fams;
     
     /**
+     * The birth date for the family.
+     */
+    private String birt;
+    
+    /**
+     * The death date for the family.
+     */
+    private String deat;
+    
+    /**
      * Create a new instance of an Individual given its ID.
      * 
      * @param id The ID of the individual.
@@ -120,6 +130,42 @@ public class Individual extends GEDCOMRecord {
     }
 
     /**
+     * Get the birth date of the individual.
+     * 
+     * @return The birth date of the individual
+     */
+    public String getBirt() {
+        return birt;
+    }
+
+    /**
+     * Set the birth date of the individual.
+     * 
+     * @param birt The birth date of the individual.
+     */
+    public void setBirt(String birt) {
+        this.birt = birt;
+    }
+
+    /**
+     * Get the death date of the individual.
+     * 
+     * @return The death date of the individual
+     */
+    public String getDeat() {
+        return deat;
+    }
+
+    /**
+     * Set the death date of the individual.
+     * 
+     * @param deat The death date of the individual.
+     */
+    public void setDeat(String deat) {
+        this.deat = deat;
+    }
+
+    /**
      * Extract the numeric ID from an Individual record's XREF ID.
      * 
      * @param xref_id The XREF ID of the record.
@@ -147,6 +193,7 @@ public class Individual extends GEDCOMRecord {
     @Override
     public String toString() {
 	return getClass().getName() + " {\n\tname: " + name + "\n\tsex: " + sex
-		+ "\n\tfamc: " + famc + "\n\tfams: " + fams + "\n}\n";
+		+ "\n\tfamc: " + famc + "\n\tfams: " + fams + "\n\tbirt: "
+		+ birt + "\n\tdeat: " + deat + "\n\tid: " + id + "\n}\n";
     }
 }

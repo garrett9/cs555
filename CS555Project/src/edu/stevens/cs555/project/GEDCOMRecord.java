@@ -14,7 +14,7 @@ public abstract class GEDCOMRecord {
     /**
      * The ID of the family.
      */
-    private int id;
+    protected int id;
     
     /**
      * Instantiate a new instance of a GEDCOM record given its ID.
