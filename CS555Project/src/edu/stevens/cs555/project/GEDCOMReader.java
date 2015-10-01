@@ -139,6 +139,13 @@ public class GEDCOMReader {
                             individual.setName(args_line.getArgsAsString());
                         } else if(tag.equals("sex")) { // The sex of the individual
                             individual.setSex(args_line.getArgsAsString());
+                        } else if(tag.equals("birt")) { // Birth date of the individual
+                            // If we hit birt, then the next line is the date we're looking for
+                            GEDCOMLineWithArgs date_line = (GEDCOMLineWithArgs)gedcom_lines.get(i + 1);
+                            individual.setBirt(date_line.getArgsAsString());
+                            
+                            // Since we already read the next line, we skip it by incrementing the count
+                            i++;
                         } else if(tag.equals("deat")) { // Death date of the individual
                             // If we hit MARR, then the next line is the date we're looking for
                             GEDCOMLineWithArgs date_line = (GEDCOMLineWithArgs)gedcom_lines.get(i + 1);
@@ -163,6 +170,11 @@ public class GEDCOMReader {
                 }
 
                 System.out.println(individual.getId() + " " + individual.getName());
+                //Print if there is invalid death date
+                if (individual.validDeat() == false) {
+                	System.out.println("Invalid Death Date");
+                }
+               
             }
 
             // Print familes

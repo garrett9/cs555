@@ -1,5 +1,9 @@
 package edu.stevens.cs555.project;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.ParseException;
+
 /**
  * A class for representing a single individual from a GEDCOM file.
  * 
@@ -18,9 +22,46 @@ public class Individual extends GEDCOMRecord {
      */
     private static final String XREF_FORMAT = "@I(\\d+)@";
     
+    
+    SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yyyy");
+    
+    /**
+     * Whether or not the class has valid death date.
+     * Added by KC
+     */
+    
+    protected boolean validDeat = true;
+    
+    /**
+     * convert deat and birt to date and make sure death date is valid
+     * Added by KC
+     */   
+    
+    public boolean isValidDeat(String str) {
+    	if (birt == null)
+    	{return true;
+    	}
+    	else
+    	{
+    	try{
+    	Date deatdate = formatter.parse(str);
+    	Date birtdate = formatter.parse(birt);
+    	System.out.println(birt);
+    	if(birtdate.after(deatdate)){
+    		return false;
+    	}
+    	}catch(ParseException e){
+    		e.printStackTrace();
+    	}
+    	
+    	return true;
+    	}
+    }
+    
     /**
      * The name of the individual.
      */
+    
     private String name;
     
     /**
@@ -145,6 +186,7 @@ public class Individual extends GEDCOMRecord {
      */
     public void setBirt(String birt) {
         this.birt = birt;
+        
     }
 
     /**
@@ -160,11 +202,20 @@ public class Individual extends GEDCOMRecord {
      * Set the death date of the individual.
      * 
      * @param deat The death date of the individual.
+     * also checks if the death date is valid and return true also false when called
      */
     public void setDeat(String deat) {
         this.deat = deat;
+        this.validDeat = isValidDeat(deat) ? true : false;
     }
-
+    
+    /**
+     * Returns whether death date is valid or not
+     */
+    public boolean validDeat() {
+    	return this.validDeat;
+    	
+    }
     /**
      * Extract the numeric ID from an Individual record's XREF ID.
      * 
