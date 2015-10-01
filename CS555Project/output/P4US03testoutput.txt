@@ -14,7 +14,7 @@ Individuals:
 9 Samantha /Price/
 10 David /Price/
 11 Tom /Ford/
-Invalid Death Date
+Invalid Birth/Death Date: Death occurred before Birth
 12 Ron /Murphy/
 13 William /Ford/
 14 Alison /Murphy/
