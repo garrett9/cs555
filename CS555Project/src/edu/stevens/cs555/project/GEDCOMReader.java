@@ -172,7 +172,7 @@ public class GEDCOMReader {
                 System.out.println(individual.getId() + " " + individual.getName());
                 //Print if there is invalid death date
                 if (individual.validDeat() == false) {
-                	System.out.println("Invalid Death Date");
+                	System.out.println("Invalid Birth/Death Date: Death occurred before Birth");
                 }
                
             }
