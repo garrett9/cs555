@@ -40,7 +40,8 @@ public abstract class GEDCOMFunction {
 	
 	/**
 	 * Returns the GEDCOMValidationExceptions that occured when running the function. Returns null if the function hasn't been run with the {@link #run(Family[], Individual[])} method, or if there are no validation errors.
-	 * @return
+	 * 
+	 * @return The GEDCOMValidationExceptions
 	 */
 	public ArrayList<GEDCOMValidationException> getValidationErrors() {
 	    return this.validation_exceptions;

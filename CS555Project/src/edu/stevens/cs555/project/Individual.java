@@ -35,8 +35,10 @@ public class Individual extends GEDCOMRecord {
     /**
      * convert deat and birt to date and make sure death date is valid
      * Added by KC
+     * 
+     * @param str The death date to validate.
+     * @return True if it is a valid death date; false otherwise.
      */   
-
     public boolean isValidDeat(String str) {
 	if (birt == null)
 	{
@@ -130,7 +132,7 @@ public class Individual extends GEDCOMRecord {
     /**
      * Set the gender of the individual.
      * 
-     * @param isMale True if the individual is a male; False otherwise.
+     * @param sex True if the individual is a male; False otherwise.
      */
     public void setSex(String sex) {
 	this.sex = sex;
@@ -213,6 +215,8 @@ public class Individual extends GEDCOMRecord {
 
     /**
      * Returns whether death date is valid or not
+     * 
+     * @return True if the death date of the Individual is valid; false otherwise.
      */
     public boolean validDeat() {
 	return this.validDeat;

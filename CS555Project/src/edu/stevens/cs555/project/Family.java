@@ -102,7 +102,7 @@ public class Family extends GEDCOMRecord {
     /**
      * Add a child to the family.
      * 
-     * @param children The child to add to the family.
+     * @param child The child to add to the family.
      */
     public void addChild(int child) {
         this.children.add(child);

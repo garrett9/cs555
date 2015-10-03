@@ -25,6 +25,7 @@ public abstract class GEDCOMRecord {
      * Instantiate a new instance of a GEDCOM record given its ID.
      * 
      * @param id The ID of the GEDCOM record.
+     * @param line_number The line number the GEDCOMRecord was created from.
      */
     public GEDCOMRecord(int id, int line_number) {
         this.id = id;

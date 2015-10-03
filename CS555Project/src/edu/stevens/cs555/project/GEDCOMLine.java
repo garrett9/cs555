@@ -152,7 +152,7 @@ public abstract class GEDCOMLine {
     /**
      * Set the line number of the line.
      * 
-     * @param The line number of the line.
+     * @param line_number The line number of the line.
      */
     public void setLineNumber(int line_number) {
 	this.line_number = line_number;

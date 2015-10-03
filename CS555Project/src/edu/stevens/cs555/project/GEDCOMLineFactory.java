@@ -17,6 +17,7 @@ public class GEDCOMLineFactory {
      * Create a GEDCOMLine from a line within a GEDCOM file. 
      * 
      * @param line The line to create the GEDCOMLine from.
+     * @param line_number The line number the GEDCOMLine will be created from.
      * @return The resulting GEDCOMLine instance. If less than 2 arguments were given, then NULL will be returned.
      */
     public GEDCOMLine createGEDCOMLineFromLine(String line, int line_number) {
@@ -40,6 +41,7 @@ public class GEDCOMLineFactory {
      * 
      * @param level The level of the line.
      * @param tag The tag of the line.
+     * @param line_number The line number the line will be create from.
      * @param args The arguments of the GEDCOM line separated by white space.
      * @return The resulting GEDCOMLine instance.
      */
@@ -52,6 +54,7 @@ public class GEDCOMLineFactory {
      * 
      * @param xref_id The XREF ID of the line.
      * @param tag The tag of the line.
+     * @param line_number The line number the record will be created from.
      * @return The resulting GEDCOMLine instance.
      */
     public GEDCOMLine createGEDCOMLineWithXref(String xref_id, String tag, int line_number) {

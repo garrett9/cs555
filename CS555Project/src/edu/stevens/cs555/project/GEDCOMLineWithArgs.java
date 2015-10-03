@@ -23,6 +23,7 @@ public class GEDCOMLineWithArgs extends GEDCOMLine {
      * 
      * @param level The level of the GEDCOM line.
      * @param tag The tag of the GEDCOM line.
+     * @param line_number The line number the GEDCOMLine was created from.
      * @param arguments The ArrayList of arguments for the GEDCOMLine.
      */
     public GEDCOMLineWithArgs(int level, String tag, int line_number, ArrayList<String> arguments) {
@@ -35,6 +36,7 @@ public class GEDCOMLineWithArgs extends GEDCOMLine {
      * 
      * @param level The level of the GEDCOM line.
      * @param tag The tag of the GEDCOM line.
+     * @param line_number The line number the record will be created from.
      * @param arguments A string of arguments separated by white space of the GEDCOM line.
      */
     public GEDCOMLineWithArgs(int level, String tag, int line_number, String arguments) {
