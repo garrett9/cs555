@@ -17,12 +17,18 @@ public abstract class GEDCOMRecord {
     protected int id;
     
     /**
+     * The line number from the GEDCOM Source file this record was created from.
+     */
+    protected int line_number;
+    
+    /**
      * Instantiate a new instance of a GEDCOM record given its ID.
      * 
      * @param id The ID of the GEDCOM record.
      */
-    public GEDCOMRecord(int id) {
+    public GEDCOMRecord(int id, int line_number) {
         this.id = id;
+        this.line_number = line_number;
     }
     
     /**
@@ -34,6 +40,14 @@ public abstract class GEDCOMRecord {
         return this.id;
     }
     
+    /**
+     * Return the line number from the GEDCOM source file this record was created with.
+     * 
+     * @return The line number from the GEDCOM source file this record was created with.
+     */
+    public int getLineNumber() {
+	return this.line_number;
+    }
     
     /**
      * Returns the numeric ID extracted from the given XREF ID based off of the provided regular expression.

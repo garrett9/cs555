@@ -15,6 +15,11 @@ import java.util.regex.Pattern;
 public abstract class GEDCOMLine {
     
     /**
+     * The line number from the GEDCOM source file this instance was created with.
+     */
+    protected int line_number;
+    
+    /**
      * Whether or not the class has a valid tag.
      */
     protected boolean hasValidTag = false;
@@ -51,6 +56,19 @@ public abstract class GEDCOMLine {
         "TRLR",
         "NOTE"
     };
+    
+    /**
+     * Initialize the GEDCOMLine with the given arguments.
+     * 
+     * @param level The level number of the line.
+     * @param tag The tag of the line.
+     * @param line_number The line number of the line.
+     */
+    public GEDCOMLine(int level, String tag, int line_number) {
+	this.setLevel(level);
+	this.setTag(tag);
+	this.setLineNumber(line_number);
+    }
     
     /**
      * Given a tag, this function returns true if the tag is valid, and false otherwise.
@@ -120,6 +138,24 @@ public abstract class GEDCOMLine {
     public void setTag(String tag) {
         this.tag = tag.trim();
         this.hasValidTag = isValidTag(tag) ? true : false;
+    }
+    
+    /**
+     * Get the line number of the line.
+     * 
+     * @return The line number of the line.
+     */
+    public int getLineNumber() {
+	return this.line_number;
+    }
+    
+    /**
+     * Set the line number of the line.
+     * 
+     * @param The line number of the line.
+     */
+    public void setLineNumber(int line_number) {
+	this.line_number = line_number;
     }
     
     /**

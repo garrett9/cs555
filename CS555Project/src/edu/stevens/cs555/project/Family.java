@@ -49,9 +49,10 @@ public class Family extends GEDCOMRecord {
      * Create a new Family instance given its ID.
      * 
      * @param id The ID of the family.
+     * @param line_number The line number from the GEDCOM source file this record was created with.
      */
-    public Family(int id) {
-        super(id);
+    public Family(int id, int line_number) {
+        super(id, line_number);
         this.children = new ArrayList<Integer>();
     }
     
@@ -158,11 +159,12 @@ public class Family extends GEDCOMRecord {
      * Creates a new instance of a Family object given the Xref ID read from a GEDCOM file.
      * 
      * @param xref_id The XREF-ID read from the GEDCOM file.
+     * @param line_number The line number from the GEDCOM source file this record was created with.
      * @return The new instance of a Family record.
      * @throws GEDCOMParseException if the xref_id is invalid.
      */
-    public static Family createFromXrefId(String xref_id) throws GEDCOMParseException {
-        return new Family(getNumericIdFromXrefId(xref_id));
+    public static Family createFromXrefId(String xref_id, int line_number) throws GEDCOMParseException {
+        return new Family(getNumericIdFromXrefId(xref_id), line_number);
     }
 
     /* (non-Javadoc)

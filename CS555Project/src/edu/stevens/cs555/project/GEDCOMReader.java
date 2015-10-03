@@ -55,6 +55,9 @@ public class GEDCOMReader {
         Individual[] individuals = new Individual[5000];
         Family[] families = new Family[1000];
 
+        // A list to hold any validation exceptions when validating the GEDCOM source file.
+        ArrayList<GEDCOMValidationException> validation_exceptions = new ArrayList<GEDCOMValidationException>();
+        
         /*
          * The try/catch block checks for a valid XREF ID when creating the correct type of record (Family/Individual)
          */
@@ -73,13 +76,24 @@ public class GEDCOMReader {
                      * If the line has the INDI tag, then we need to create an Individual record.
                      */
                     if(xref_line.tag.equals(Family.TAG)) {
-                        Family family = Family.createFromXrefId(xref_line.getXrefId());
-                        families[family.getId()] = family;
-                        last_record = family;
+                        Family family = Family.createFromXrefId(xref_line.getXrefId(), line.getLineNumber());
+                        
+                        if(families[family.getId()] == null) {                
+                            families[family.getId()] = family;
+                            last_record = family;
+                        }
+                        else
+                           validation_exceptions.add(new GEDCOMValidationException("A family with the same ID already exists!", line.getLineNumber())); 
+                       
                     } else {
-                        Individual individual = Individual.createFromXrefId(xref_line.getXrefId());
-                        individuals[individual.getId()] = individual;
-                        last_record = individual;
+                        Individual individual = Individual.createFromXrefId(xref_line.getXrefId(), line.getLineNumber());
+                        
+                        if(individuals[individual.getId()] == null) {
+                            individuals[individual.getId()] = individual;
+                            last_record = individual;
+                        }
+                        else
+                            validation_exceptions.add(new GEDCOMValidationException("An individual with the same ID already exists!", line.getLineNumber()));
                     }
                 } else {
                     /*
@@ -189,7 +203,6 @@ public class GEDCOMReader {
 
                 Individual wife = individuals[family.getWife()];
                 String wifeName = wife != null ? wife.getName() : "";
-
                 System.out.println(family.getId());
                 System.out.println("  Husband: " + husbandName);
                 System.out.println("  Wife: " + wifeName);
@@ -198,6 +211,22 @@ public class GEDCOMReader {
             error(e.getMessage());
             System.out.println(Arrays.toString(individuals));
             System.out.println(Arrays.toString(families));
+        }
+        
+        // Here's where we can add the GEDCOMFunction to run.
+        ArrayList<GEDCOMFunction> gedcom_functions = new ArrayList<GEDCOMFunction>();
+        gedcom_functions.add(new UniqueNameAndBirth());
+        
+        for(GEDCOMFunction gedcom_function : gedcom_functions) {
+            gedcom_function.run(families, individuals);
+            validation_exceptions.addAll(gedcom_function.getValidationErrors());
+        }
+        
+        // Here's where we print out the validation errors
+        if(validation_exceptions.size() > 0) {
+            System.out.println("\nThe following validation errors were found with the GEDCOM file...\n");
+            for(GEDCOMValidationException e : validation_exceptions)
+                System.out.println("\t" + e);
         }
     }
 }

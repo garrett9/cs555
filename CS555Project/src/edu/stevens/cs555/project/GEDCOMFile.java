@@ -59,8 +59,11 @@ public class GEDCOMFile extends File {
         GEDCOMLineFactory factory = new GEDCOMLineFactory();
         this.gedcom_lines = new ArrayList<GEDCOMLine>();
         try {
-            while((line = buffered_reader.readLine()) != null)
-            this.gedcom_lines.add(factory.createGEDCOMLineFromLine(line));
+            int line_number = 0;
+            while((line = buffered_reader.readLine()) != null) {
+        	line_number++;
+        	this.gedcom_lines.add(factory.createGEDCOMLineFromLine(line, line_number));
+            }
         } catch(IOException e) {
             io_e = e;
         }

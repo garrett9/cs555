@@ -22,11 +22,10 @@ public class GEDCOMLineWithXref extends GEDCOMLine {
      * @param xref_id The XREF ID of the line.
      * @param tag The Tag of the line.
      */
-    public GEDCOMLineWithXref(String xref_id, String tag) {
+    public GEDCOMLineWithXref(String xref_id, String tag, int line_number) {
         // Lines with an XREF ID will always have a level of 0
-        this.setLevel(0);
+	super(0, tag, line_number);
         this.setXrefId(xref_id);
-        this.setTag(tag);
     }
 
     /**

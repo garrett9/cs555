@@ -25,9 +25,8 @@ public class GEDCOMLineWithArgs extends GEDCOMLine {
      * @param tag The tag of the GEDCOM line.
      * @param arguments The ArrayList of arguments for the GEDCOMLine.
      */
-    public GEDCOMLineWithArgs(int level, String tag, ArrayList<String> arguments) {
-        this.setLevel(level);
-        this.setTag(tag);
+    public GEDCOMLineWithArgs(int level, String tag, int line_number, ArrayList<String> arguments) {
+       super(level, tag, line_number);
         this.args = arguments;
     }
     
@@ -38,9 +37,8 @@ public class GEDCOMLineWithArgs extends GEDCOMLine {
      * @param tag The tag of the GEDCOM line.
      * @param arguments A string of arguments separated by white space of the GEDCOM line.
      */
-    public GEDCOMLineWithArgs(int level, String tag, String arguments) {
-        this.setLevel(level);
-        this.setTag(tag);
+    public GEDCOMLineWithArgs(int level, String tag, int line_number, String arguments) {
+        super(level, tag, line_number);
         
         String[] args_split = arguments.trim().split(" ");
         this.args = new ArrayList<String>(args_split.length);

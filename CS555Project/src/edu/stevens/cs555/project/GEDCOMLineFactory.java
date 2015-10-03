@@ -19,19 +19,19 @@ public class GEDCOMLineFactory {
      * @param line The line to create the GEDCOMLine from.
      * @return The resulting GEDCOMLine instance. If less than 2 arguments were given, then NULL will be returned.
      */
-    public GEDCOMLine createGEDCOMLineFromLine(String line) {
+    public GEDCOMLine createGEDCOMLineFromLine(String line, int line_number) {
         String[] splits = line.split(" ");
         if(splits.length < 2)
             return null;
 
         if(GEDCOMLine.isValidXrefId(splits[1]))
-            return createGEDCOMLineWithXref(splits[1], splits[2]);
+            return createGEDCOMLineWithXref(splits[1], splits[2], line_number);
         else {
             ArrayList<String> args = new ArrayList<String>();
             if(splits.length >= 3)
                 for(int i = 2; i < splits.length; i++)
                     args.add(splits[i]);
-            return createGEDCOMLineWithArgs(Integer.parseInt(splits[0]), splits[1], args);
+            return createGEDCOMLineWithArgs(Integer.parseInt(splits[0]), splits[1], line_number, args);
         }
     }
     
@@ -43,8 +43,8 @@ public class GEDCOMLineFactory {
      * @param args The arguments of the GEDCOM line separated by white space.
      * @return The resulting GEDCOMLine instance.
      */
-    public GEDCOMLine createGEDCOMLineWithArgs(int level, String tag, ArrayList<String> args) {
-        return new GEDCOMLineWithArgs(level, tag, args);
+    public GEDCOMLine createGEDCOMLineWithArgs(int level, String tag, int line_number, ArrayList<String> args) {
+        return new GEDCOMLineWithArgs(level, tag, line_number, args);
     }
     
     /**
@@ -54,7 +54,7 @@ public class GEDCOMLineFactory {
      * @param tag The tag of the line.
      * @return The resulting GEDCOMLine instance.
      */
-    public GEDCOMLine createGEDCOMLineWithXref(String xref_id, String tag) {
-        return new GEDCOMLineWithXref(xref_id, tag);
+    public GEDCOMLine createGEDCOMLineWithXref(String xref_id, String tag, int line_number) {
+        return new GEDCOMLineWithXref(xref_id, tag, line_number);
     }
 }
