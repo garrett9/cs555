@@ -1,4 +1,7 @@
-package edu.stevens.cs555.project;
+package edu.stevens.cs555.project.processors;
+
+import edu.stevens.cs555.project.Family;
+import edu.stevens.cs555.project.Individual;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -6,10 +9,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class Under150 extends GEDCOMFunction {
-	
+public class Under150 extends GEDCOMProcessor {
+
 	public Under150() {
-		this.id = "US07";
+		super("US07");
 	}
 	
 	private static int getDiffYears(Date first, Date last) {

@@ -1,5 +1,8 @@
 package edu.stevens.cs555.project;
 
+import edu.stevens.cs555.project.processors.GEDCOMProcessor;
+import edu.stevens.cs555.project.processors.UniqueNameAndBirth;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -213,11 +216,11 @@ public class GEDCOMReader {
             System.out.println(Arrays.toString(families));
         }
         
-        // Here's where we can add the GEDCOMFunction to run.
-        ArrayList<GEDCOMFunction> gedcom_functions = new ArrayList<GEDCOMFunction>();
+        // Here's where we can add the GEDCOMProcessor to run.
+        ArrayList<GEDCOMProcessor> gedcom_functions = new ArrayList<GEDCOMProcessor>();
         gedcom_functions.add(new UniqueNameAndBirth());
         
-        for(GEDCOMFunction gedcom_function : gedcom_functions) {
+        for(GEDCOMProcessor gedcom_function : gedcom_functions) {
             gedcom_function.run(families, individuals);
             validation_exceptions.addAll(gedcom_function.getValidationErrors());
         }
