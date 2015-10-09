@@ -1,0 +1,160 @@
+0 NOTE Garrett Shevach P1 Family
+0 HEAD
+1 SOUR Family Echo
+2 WWW http://www.familyecho.com/
+1 FILE P1 Family
+1 DATE 7 SEP 2015
+1 DEST ANSTFILE
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 SUBM @I1@
+2 NAME Bob
+1 SUBN
+1 CHAR UTF-8
+0 @I1@ INDI
+1 NAME John /Doe/
+2 GIVN John
+2 SURN Doe
+2 _MARNM Taylor
+1 SEX M
+1 FAMS @F1@
+0 @I2@ INDI
+1 NAME Bill /Taylor/
+2 GIVN Bill
+2 SURN Taylor
+2 _MARNM Taylor
+1 SEX M
+1 FAMS @F2@
+1 FAMC @F1@
+0 @I3@ INDI
+1 NAME Jane /Taylor/
+2 GIVN Jane
+2 SURN Taylor
+2 _MARNM Taylor
+1 SEX F
+1 FAMS @F1@
+0 @I4@ INDI
+1 NAME Bob /Taylor/
+2 GIVN Bob
+2 SURN Taylor
+2 _MARNM Taylor
+1 SEX M
+1 FAMS @F3@
+1 FAMC @F2@
+0 @I5@ INDI
+1 NAME Meghan /Thompson/
+2 GIVN Meghan
+2 SURN Thompson
+2 _MARNM Taylor
+1 SEX F
+1 FAMS @F2@
+0 @I6@ INDI
+1 NAME Jill /Taylor/
+2 GIVN Jill
+2 SURN Taylor
+2 _MARNM Price
+1 SEX F
+1 FAMS @F6@
+1 FAMC @F1@
+0 @I7@ INDI
+1 NAME Ashley /Taylor/
+2 GIVN Ashley
+2 SURN Taylor
+1 SEX F
+1 FAMC @F3@
+0 @I8@ INDI
+1 NAME Angela /Johnson/
+2 GIVN Angela
+2 SURN Johnson
+2 _MARNM Taylor
+1 SEX F
+1 BIRT
+2 DATE 22 JAN 2015
+1 DEAT Y
+2 DATE 8 JAN 2020
+1 FAMS @F3@
+0 @I9@ INDI
+1 NAME Samantha /Price/
+2 GIVN Samantha
+2 SURN Price
+2 _MARNM Murphy
+1 SEX F
+1 BIRT
+2 DATE 22 JAN 2015
+1 FAMS @F4@
+1 FAMS @F5@
+1 FAMC @F6@
+0 @I10@ INDI
+1 NAME David /Price/
+2 GIVN David
+2 SURN Price
+2 _MARNM Price
+1 SEX M
+1 FAMS @F6@
+0 @I11@ INDI
+1 NAME Tom /Ford/
+2 GIVN Tom
+2 SURN Ford
+2 _MARNM Ford
+1 SEX M
+1 BIRT
+2 DATE 22 JAN 2015
+1 DEAT Y
+2 DATE 8 JAN 2512
+1 FAMS @F5@
+0 @I12@ INDI
+1 NAME Ron /Murphy/
+2 GIVN Ron
+2 SURN Murphy
+2 _MARNM Murphy
+1 SEX M
+1 BIRT
+2 DATE 22 JAN 1815
+1 FAMS @F4@
+0 @I13@ INDI
+1 NAME William /Ford/
+2 GIVN William
+2 SURN Ford
+2 _MARNM Ford
+1 SEX M
+1 FAMC @F5@
+0 @I14@ INDI
+1 NAME Alison /Murphy/
+2 GIVN Alison
+2 SURN Murphy
+2 _MARNM Murphy
+1 SEX F
+1 FAMC @F4@
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I3@
+1 CHIL @I2@
+1 CHIL @I6@
+1 _CURRENT N
+0 @F2@ FAM
+1 HUSB @I2@
+1 WIFE @I5@
+1 CHIL @I4@
+1 _CURRENT N
+0 @F3@ FAM
+1 HUSB @I4@
+1 WIFE @I8@
+1 CHIL @I7@
+1 _CURRENT N
+0 @F4@ FAM
+1 HUSB @I12@
+1 WIFE @I9@
+1 CHIL @I14@
+1 _CURRENT Y
+0 @F5@ FAM
+1 HUSB @I11@
+1 WIFE @I9@
+1 CHIL @I13@
+1 _CURRENT N
+0 @F6@ FAM
+1 HUSB @I10@
+1 WIFE @I6@
+1 CHIL @I9@
+1 _CURRENT N
+0 TRLR

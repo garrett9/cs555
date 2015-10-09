@@ -1,10 +1,12 @@
 package edu.stevens.cs555.project.processors;
 
 import edu.stevens.cs555.project.Family;
+import edu.stevens.cs555.project.GEDCOMValidationException;
 import edu.stevens.cs555.project.Individual;
 
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -34,43 +36,37 @@ public class Under150 extends GEDCOMProcessor {
 	
 	@Override
 	public void run(Family[] families, Individual[] individuals) {
-		DateFormat df = DateFormat.getDateInstance();
-		for(int i = 0; i < individuals.length; i++) {
-			Individual individual = individuals[i];
-			if(individual == null) {
-				continue;
-			}							
-			String birt = individual.getBirt();
-			String deat = individual.getDeat();
-			Date birth, death;
-			this.printAnomaly("Under 150");
-			if(birt != null) {
-				try {
-					
-					birth = df.parse(individual.getBirt());
-					System.out.println(birth);
-					if(deat != null) {
-						try {
-							death = df.parse(individual.getDeat());
-							if(Under150.getDiffYears(birth, death) > 150) {
-	//							return false;
+		DateFormat df = new SimpleDateFormat("d MMM yyyy");
+		for(Individual i : individuals) {
+			if(i != null) {
+				String birt = i.getBirt();
+				String deat = i.getDeat();
+				Date birth, death;
+				if(birt != null) {
+					try {					
+						birth = df.parse(i.getBirt());
+						System.out.println(birth);
+						if(deat != null) {
+							try {
+								death = df.parse(i.getDeat());
+								if(Under150.getDiffYears(birth, death) > 150) {
+									this.addValidationException(new GEDCOMValidationException(i.getName() + " lived to be over 150 years old.", i.getLineNumber()));
+								}
+								
+							} catch (ParseException e) {											
+								//syntax error?
 							}
-							//death - birth < 150
-							
-						} catch (ParseException e) {											
-							//syntax error?
+						} else {						
+							if(Under150.getDiffYears(birth, new Date()) > 150) {
+								this.addValidationException(new GEDCOMValidationException(i.getName() + " is over 150 years old.", i.getLineNumber()));
+							}
 						}
-					} else {
-						//now - birth < 150
+						
+					} catch (ParseException e) {
+						//syntax error with birth?
 					}
-					
-				} catch (ParseException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-//					return false;
-				}
-			}						
-			
+				}						
+			}			
 		}
 			
 	}
