@@ -37,6 +37,6 @@ public class GEDCOMValidationException extends Exception {
      * @see java.lang.Throwable#toString()
      */
     public String toString() {
-	return "Error with the record at line " + this.getLineNumber() + ": " + this.getMessage();
+	return "Anomaly with the record at line " + this.getLineNumber() + ": " + this.getMessage();
     }
 }

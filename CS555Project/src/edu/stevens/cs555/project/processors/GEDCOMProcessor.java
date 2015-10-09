@@ -33,10 +33,6 @@ public abstract class GEDCOMProcessor {
 	*/
 	public abstract void run(Family[] families, Individual[] individuals);
 	
-	public void printAnomaly(String anomaly) {
-		System.out.println("Anomoly " + this.id + ": " + anomaly);
-	}
-	
 	/**
 	 * Adds a GEDCOMValidationException to the GEDCOMProcessor's list of validations exceptions.
 	 * 

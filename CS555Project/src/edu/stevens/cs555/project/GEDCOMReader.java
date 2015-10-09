@@ -1,6 +1,7 @@
 package edu.stevens.cs555.project;
 
 import edu.stevens.cs555.project.processors.GEDCOMProcessor;
+import edu.stevens.cs555.project.processors.ListDeceased;
 import edu.stevens.cs555.project.processors.Under150;
 import edu.stevens.cs555.project.processors.UniqueNameAndBirth;
 
@@ -221,6 +222,7 @@ public class GEDCOMReader {
         ArrayList<GEDCOMProcessor> gedcom_functions = new ArrayList<GEDCOMProcessor>();
         gedcom_functions.add(new UniqueNameAndBirth());
         gedcom_functions.add(new Under150());
+        gedcom_functions.add(new ListDeceased());
         
         for(GEDCOMProcessor gedcom_function : gedcom_functions) {
             gedcom_function.run(families, individuals);
@@ -229,7 +231,7 @@ public class GEDCOMReader {
         
         // Here's where we print out the validation errors
         if(validation_exceptions.size() > 0) {
-            System.out.println("\nThe following validation errors were found with the GEDCOM file...\n");
+            System.out.println("\nThe following validation anomalies were found with the GEDCOM file...\n");
             for(GEDCOMValidationException e : validation_exceptions)
                 System.out.println("\t" + e);
         }
