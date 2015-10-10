@@ -8,6 +8,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
+/*
+ * To create an exception with death date earlier than birth date from GEDCOM
+ * Kevin Cho
+ */
 public class BirthBeforeDeath extends GEDCOMProcessor {
 
 	public BirthBeforeDeath() {
