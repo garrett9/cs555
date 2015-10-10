@@ -19,7 +19,7 @@ public class BirthBeforeDeath extends GEDCOMProcessor {
 		super("US03");
 	}
 	
-	protected boolean validMarrDate = true;
+	//protected boolean validMarrDate = true;
 		
     public static boolean isValidDeat(Date birtdate, Date deatdate) {
 			if(birtdate.after(deatdate)){
@@ -40,7 +40,7 @@ public class BirthBeforeDeath extends GEDCOMProcessor {
 				if(birt != null) {
 					try {					
 						birth = formatter.parse(birt);
-						System.out.println(birth);
+						//System.out.println(birth);
 						if(deat != null) {
 							try {
 								death = formatter.parse(deat);
@@ -62,5 +62,6 @@ public class BirthBeforeDeath extends GEDCOMProcessor {
 		}
 			
 	}
-
 }
+
+

@@ -1,8 +1,5 @@
 package edu.stevens.cs555.project;
 
-//import java.text.SimpleDateFormat;
-//import java.util.Date;
-//import java.text.ParseException;
 
 /**
  * A class for representing a single individual from a GEDCOM file.
@@ -21,47 +18,6 @@ public class Individual extends GEDCOMRecord {
      * The regular expression used to extract the numeric ID from the XREF ID associated to an Individual record.
      */
     private static final String XREF_FORMAT = "@I(\\d+)@";
-
-
-    //SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yyyy");
-
-    /**
-     * Whether or not the class has valid death date.
-     * Added by KC
-     */
-
-    //protected boolean validDeat = true;
-
-    /**
-     * convert deat and birt to date and make sure death date is valid
-     * Added by KC
-     * 
-     * @param str The death date to validate.
-     * @return True if it is a valid death date; false otherwise.
-     */
-    /*
-    public boolean isValidDeat(String str) {
-	if (birt == null)
-	{
-	    return true;
-	}
-	else
-	{
-	    try{
-		Date deatdate = formatter.parse(str);
-		Date birtdate = formatter.parse(birt);
-		System.out.println(birt);
-		if(birtdate.after(deatdate)){
-		    return false;
-		}
-	    }catch(ParseException e){
-		e.printStackTrace();
-	    }
-
-	    return true;
-	}
-    }
-    */
 
     /**
      * The name of the individual.
@@ -212,7 +168,6 @@ public class Individual extends GEDCOMRecord {
     */ 
     public void setDeat(String deat) {
 	this.deat = deat;
-	//this.validDeat = isValidDeat(deat) ? true : false;
     }
 
     /**
