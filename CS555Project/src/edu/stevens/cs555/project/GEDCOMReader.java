@@ -4,6 +4,7 @@ import edu.stevens.cs555.project.processors.GEDCOMProcessor;
 import edu.stevens.cs555.project.processors.ListDeceased;
 import edu.stevens.cs555.project.processors.Under150;
 import edu.stevens.cs555.project.processors.UniqueNameAndBirth;
+import edu.stevens.cs555.project.processors.BirthBeforeDeath;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -188,11 +189,7 @@ public class GEDCOMReader {
                     continue;
                 }
 
-                System.out.println(individual.getId() + " " + individual.getName());
-                //Print if there is invalid death date
-                if (individual.validDeat() == false) {
-                	System.out.println("Invalid Birth/Death Date: Death occurred before Birth");
-                }
+                System.out.println(individual.getId() + " " + individual.getName());                
                
             }
 
@@ -223,6 +220,7 @@ public class GEDCOMReader {
         gedcom_functions.add(new UniqueNameAndBirth());
         gedcom_functions.add(new Under150());
         gedcom_functions.add(new ListDeceased());
+        gedcom_functions.add(new BirthBeforeDeath());
         
         for(GEDCOMProcessor gedcom_function : gedcom_functions) {
             gedcom_function.run(families, individuals);

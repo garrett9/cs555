@@ -1,8 +1,8 @@
 package edu.stevens.cs555.project;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.text.ParseException;
+//import java.text.SimpleDateFormat;
+//import java.util.Date;
+//import java.text.ParseException;
 
 /**
  * A class for representing a single individual from a GEDCOM file.
@@ -23,14 +23,14 @@ public class Individual extends GEDCOMRecord {
     private static final String XREF_FORMAT = "@I(\\d+)@";
 
 
-    SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yyyy");
+    //SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yyyy");
 
     /**
      * Whether or not the class has valid death date.
      * Added by KC
      */
 
-    protected boolean validDeat = true;
+    //protected boolean validDeat = true;
 
     /**
      * convert deat and birt to date and make sure death date is valid
@@ -38,7 +38,8 @@ public class Individual extends GEDCOMRecord {
      * 
      * @param str The death date to validate.
      * @return True if it is a valid death date; false otherwise.
-     */   
+     */
+    /*
     public boolean isValidDeat(String str) {
 	if (birt == null)
 	{
@@ -60,6 +61,7 @@ public class Individual extends GEDCOMRecord {
 	    return true;
 	}
     }
+    */
 
     /**
      * The name of the individual.
@@ -207,21 +209,23 @@ public class Individual extends GEDCOMRecord {
      * 
      * @param deat The death date of the individual.
      * also checks if the death date is valid and return true also false when called
-     */
+    */ 
     public void setDeat(String deat) {
 	this.deat = deat;
-	this.validDeat = isValidDeat(deat) ? true : false;
+	//this.validDeat = isValidDeat(deat) ? true : false;
     }
 
     /**
      * Returns whether death date is valid or not
      * 
      * @return True if the death date of the Individual is valid; false otherwise.
-     */
+     
     public boolean validDeat() {
 	return this.validDeat;
 
     }
+    */
+    
     /**
      * Extract the numeric ID from an Individual record's XREF ID.
      * 

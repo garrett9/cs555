@@ -1,5 +1,4 @@
 Reading GEDCOM file at "C:\Users\Kev\Documents\CS555\W4\InvalidDeathdateTest.ged"...
-22 JAN 2015
 
 Individuals:
 
@@ -14,7 +13,6 @@ Individuals:
 9 Samantha /Price/
 10 David /Price/
 11 Tom /Ford/
-Invalid Birth/Death Date: Death occurred before Birth
 12 Ron /Murphy/
 13 William /Ford/
 14 Alison /Murphy/
@@ -40,3 +38,10 @@ Families:
 6
   Husband: David /Price/
   Wife: Jill /Taylor/
+Thu Jan 22 00:00:00 EST 2015
+Thu Jan 22 00:00:00 EST 2015
+
+The following validation anomalies were found with the GEDCOM file...
+
+	Anomaly with the record at line 89: Tom /Ford/ is deceased.
+	Anomaly with the record at line 89: Tom /Ford/ 's Deathdate is earlier than birth date
