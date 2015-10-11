@@ -1,0 +1,19 @@
+Reading GEDCOM file at "/home/matt/Code/cs555/cs555/CS555Project/./test_files/dates_before_current_date.ged"...
+
+Individuals:
+
+1 Joann /Para/
+2 Joann /Smith/
+3 Bobby Jo /Cox/
+
+
+Families:
+
+1
+  Husband: Joann /Para/
+  Wife: Joann /Smith/
+
+The following validation anomalies were found with the GEDCOM file...
+
+	Anomaly with the record at line 23: Marriage date is after current date.
+	Anomaly with the record at line 2: Birth date is after current date.

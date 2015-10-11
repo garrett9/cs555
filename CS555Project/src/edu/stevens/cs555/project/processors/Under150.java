@@ -45,7 +45,6 @@ public class Under150 extends GEDCOMProcessor {
 				if(birt != null) {
 					try {					
 						birth = df.parse(i.getBirt());
-						System.out.println(birth);
 						if(deat != null) {
 							try {
 								death = df.parse(i.getDeat());
