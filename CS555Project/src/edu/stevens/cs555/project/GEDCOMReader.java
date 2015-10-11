@@ -2,6 +2,7 @@ package edu.stevens.cs555.project;
 
 import edu.stevens.cs555.project.processors.DatesBeforeCurrentDate;
 import edu.stevens.cs555.project.processors.GEDCOMProcessor;
+import edu.stevens.cs555.project.processors.ValidDates;
 import edu.stevens.cs555.project.processors.ListDeceased;
 import edu.stevens.cs555.project.processors.Under150;
 import edu.stevens.cs555.project.processors.UniqueNameAndBirth;
@@ -225,6 +226,7 @@ public class GEDCOMReader {
         gedcom_functions.add(new BirthBeforeDeath());
         gedcom_functions.add(new BirthBeforeMarriage());
         gedcom_functions.add(new DatesBeforeCurrentDate());
+        gedcom_functions.add(new ValidDates());
         
         for(GEDCOMProcessor gedcom_function : gedcom_functions) {
             gedcom_function.run(families, individuals);
