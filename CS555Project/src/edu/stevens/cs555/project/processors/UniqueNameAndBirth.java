@@ -38,7 +38,7 @@ public class UniqueNameAndBirth extends GEDCOMProcessor {
                 if(hash_map.get(i.getName() + i.getBirt()) == null)
                     hash_map.put(i.getName() + i.getBirt(), i);
                 else
-                    this.addValidationException(new GEDCOMValidationException("A record with the same name and birth date already exists!", i.getLineNumber()));
+                    this.addValidationException(new GEDCOMValidationException("A record with the same name and birth date as this individual already exists!", i.getLineNumber()));
             }
         }
     }
