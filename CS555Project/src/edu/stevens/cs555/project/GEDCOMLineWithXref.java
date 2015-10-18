@@ -21,12 +21,12 @@ public class GEDCOMLineWithXref extends GEDCOMLine {
      * 
      * @param xref_id The XREF ID of the line.
      * @param tag The Tag of the line.
+     * @param line_number The line number the record will be created from.
      */
-    public GEDCOMLineWithXref(String xref_id, String tag) {
-	// Lines with an XREF ID will always have a level of 0
-	this.setLevel(0);
-	this.setXrefId(xref_id);
-	this.setTag(tag);
+    public GEDCOMLineWithXref(String xref_id, String tag, int line_number) {
+        // Lines with an XREF ID will always have a level of 0
+	super(0, tag, line_number);
+        this.setXrefId(xref_id);
     }
 
     /**
@@ -53,10 +53,10 @@ public class GEDCOMLineWithXref extends GEDCOMLine {
      * @return The String representation.
      */
     public String toString() {
-	String line = this.level + " " + this.xref_id + " " + this.tag;
-	
-	return "Line:\t" + line + "\n" +
-		"Level:\t" + this.level + "\n" +
-		"Tag:\t" + this.tag;
+        String line = this.level + " " + this.xref_id + " " + this.tag;
+        
+        return "Line:\t" + line + "\n" +
+            "Level:\t" + this.level + "\n" +
+            "Tag:\t" + this.tag;
     }
 }

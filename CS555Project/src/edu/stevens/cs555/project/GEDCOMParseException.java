@@ -16,6 +16,6 @@ public class GEDCOMParseException extends Exception {
      * @param msg The message to attach to the exception.
      */
     public GEDCOMParseException(String msg) {
-	super(msg);
+        super(msg);
     }
 }

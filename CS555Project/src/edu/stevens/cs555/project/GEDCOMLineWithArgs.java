@@ -23,12 +23,12 @@ public class GEDCOMLineWithArgs extends GEDCOMLine {
      * 
      * @param level The level of the GEDCOM line.
      * @param tag The tag of the GEDCOM line.
+     * @param line_number The line number the GEDCOMLine was created from.
      * @param arguments The ArrayList of arguments for the GEDCOMLine.
      */
-    public GEDCOMLineWithArgs(int level, String tag, ArrayList<String> arguments) {
-	this.setLevel(level);
-	this.setTag(tag);
-	this.args = arguments;
+    public GEDCOMLineWithArgs(int level, String tag, int line_number, ArrayList<String> arguments) {
+       super(level, tag, line_number);
+        this.args = arguments;
     }
     
     /**
@@ -36,16 +36,16 @@ public class GEDCOMLineWithArgs extends GEDCOMLine {
      * 
      * @param level The level of the GEDCOM line.
      * @param tag The tag of the GEDCOM line.
+     * @param line_number The line number the record will be created from.
      * @param arguments A string of arguments separated by white space of the GEDCOM line.
      */
-    public GEDCOMLineWithArgs(int level, String tag, String arguments) {
-	this.setLevel(level);
-	this.setTag(tag);
-	
-	String[] args_split = arguments.trim().split(" ");
-	this.args = new ArrayList<String>(args_split.length);
-	for(String arg : args_split)
-	    this.addArg(arg);
+    public GEDCOMLineWithArgs(int level, String tag, int line_number, String arguments) {
+        super(level, tag, line_number);
+        
+        String[] args_split = arguments.trim().split(" ");
+        this.args = new ArrayList<String>(args_split.length);
+        for(String arg : args_split)
+            this.addArg(arg);
     }
     
     /**
@@ -54,7 +54,7 @@ public class GEDCOMLineWithArgs extends GEDCOMLine {
      * @param arg The argument to add for the line.
      */
     public void addArg(String arg) {
-	this.args.add(arg.trim());
+        this.args.add(arg.trim());
     }
     
     /**
@@ -63,7 +63,7 @@ public class GEDCOMLineWithArgs extends GEDCOMLine {
      * @return The list of arguments for the line.
      */
     public ArrayList<String> getArgs() {
-	return this.args;
+        return this.args;
     }
     
     /**
@@ -72,7 +72,7 @@ public class GEDCOMLineWithArgs extends GEDCOMLine {
      * @return The arguments of the line separated by white space.
      */
     public String getArgsAsString() {
-	return this.getArgsAsString(" ");
+        return this.getArgsAsString(" ");
     }
     
     /**
@@ -82,7 +82,7 @@ public class GEDCOMLineWithArgs extends GEDCOMLine {
      * @return The joined string.
      */
     public String getArgsAsString(String delimiter) {
-	return String.join(delimiter, this.args);
+        return String.join(delimiter, this.args);
     }
     
     /**
@@ -91,11 +91,11 @@ public class GEDCOMLineWithArgs extends GEDCOMLine {
      * @return The String representation.
      */
     public String toString() {
-	String line = this.level + " " + this.tag + " " + String.join(" ", this.args);
-	String tag = this.hasValidTag ? this.tag : "\"Invalid Tag\"";
-	
-	return "Line:\t" + line.trim() + "\n" +
-		"Level:\t" + this.level + "\n" +
-		"Tag:\t" + tag;
+        String line = this.level + " " + this.tag + " " + String.join(" ", this.args);
+        String tag = this.hasValidTag ? this.tag : "\"Invalid Tag\"";
+        
+        return "Line:\t" + line.trim() + "\n" +
+            "Level:\t" + this.level + "\n" +
+            "Tag:\t" + tag;
     }
 }

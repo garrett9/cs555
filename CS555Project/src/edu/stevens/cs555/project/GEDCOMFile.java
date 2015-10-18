@@ -31,7 +31,7 @@ public class GEDCOMFile extends File {
      * @param path The path to the file.
      */
     public GEDCOMFile(String path) {
-	super(path);
+        super(path);
     }
 
     /**
@@ -40,7 +40,7 @@ public class GEDCOMFile extends File {
      * @return The ArrayList of GEDCOM lines.
      */
     public ArrayList<GEDCOMLine> getGedcomLines() {
-	return this.gedcom_lines;
+        return this.gedcom_lines;
     }
 
     /**
@@ -51,24 +51,28 @@ public class GEDCOMFile extends File {
      * @return The ArrayList
      */
     public ArrayList<GEDCOMLine> read() throws FileNotFoundException, IOException {
-	FileReader file_reader = new FileReader(this);
-	BufferedReader buffered_reader = new BufferedReader(file_reader);
+        FileReader file_reader = new FileReader(this);
+        BufferedReader buffered_reader = new BufferedReader(file_reader);
 
-	String line;
-	IOException io_e = null;
-	GEDCOMLineFactory factory = new GEDCOMLineFactory();
-	this.gedcom_lines = new ArrayList<GEDCOMLine>();
-	try {
-	    while((line = buffered_reader.readLine()) != null)
-		this.gedcom_lines.add(factory.createGEDCOMLineFromLine(line));
-	} catch(IOException e) {
-	    io_e = e;
-	}
+        String line;
+        IOException io_e = null;
+        GEDCOMLineFactory factory = new GEDCOMLineFactory();
+        this.gedcom_lines = new ArrayList<GEDCOMLine>();
+        try {
+            int line_number = 0;
+            while((line = buffered_reader.readLine()) != null) {
+        	line_number++;
+        	this.gedcom_lines.add(factory.createGEDCOMLineFromLine(line, line_number));
+            }
+        } catch(IOException e) {
+            io_e = e;
+        }
 
-	buffered_reader.close();
-	if(io_e != null)
-	    throw io_e;
-	return this.gedcom_lines;
+        buffered_reader.close();
+        if(io_e != null) {
+            throw io_e;
+        }
+        
+        return this.gedcom_lines;
     }
-
 }

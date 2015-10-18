@@ -15,6 +15,11 @@ import java.util.regex.Pattern;
 public abstract class GEDCOMLine {
     
     /**
+     * The line number from the GEDCOM source file this instance was created with.
+     */
+    protected int line_number;
+    
+    /**
      * Whether or not the class has a valid tag.
      */
     protected boolean hasValidTag = false;
@@ -33,24 +38,37 @@ public abstract class GEDCOMLine {
      * A list of valid tags for a GEDCOM line.
      */
     private static String[] valid_tags = {
-	"INDI",
-	"NAME",
-	"SEX",
-	"BIRT",
-	"DEAT",
-	"FAMC",
-	"FAMS",
-	"FAM",
-	"MARR",
-	"HUSB",
-	"WIFE",
-	"CHIL",
-	"DIV",
-	"DATE",
-	"HEAD",
-	"TRLR",
-	"NOTE"
+        "INDI",
+        "NAME",
+        "SEX",
+        "BIRT",
+        "DEAT",
+        "FAMC",
+        "FAMS",
+        "FAM",
+        "MARR",
+        "HUSB",
+        "WIFE",
+        "CHIL",
+        "DIV",
+        "DATE",
+        "HEAD",
+        "TRLR",
+        "NOTE"
     };
+    
+    /**
+     * Initialize the GEDCOMLine with the given arguments.
+     * 
+     * @param level The level number of the line.
+     * @param tag The tag of the line.
+     * @param line_number The line number of the line.
+     */
+    public GEDCOMLine(int level, String tag, int line_number) {
+	this.setLevel(level);
+	this.setTag(tag);
+	this.setLineNumber(line_number);
+    }
     
     /**
      * Given a tag, this function returns true if the tag is valid, and false otherwise.
@@ -59,10 +77,13 @@ public abstract class GEDCOMLine {
      * @return True if the tag is valid, and false otherwise.
      */
     public static boolean isValidTag(String str) {
-	for(String tag: valid_tags)
-	    if(tag.equals(str))
-		return true;
-	return false;
+        for(String tag: valid_tags) {
+            if(tag.equals(str)) {
+                return true;
+            }
+        }
+
+        return false;
     }
     
     /**
@@ -72,12 +93,14 @@ public abstract class GEDCOMLine {
      * @return True if the XREF ID is valid, and false otherwise.
      */
     public static boolean isValidXrefId(String xref_id) {
-	String regex = "@[F|I]\\d+@";
-	Pattern pattern = Pattern.compile(regex);
-	Matcher m = pattern.matcher(xref_id);
-	if(m.matches())
-	    return true;
-	return false;
+        String regex = "@[F|I]\\d+@";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher m = pattern.matcher(xref_id);
+        if(m.matches()) {
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -118,11 +141,29 @@ public abstract class GEDCOMLine {
     }
     
     /**
+     * Get the line number of the line.
+     * 
+     * @return The line number of the line.
+     */
+    public int getLineNumber() {
+	return this.line_number;
+    }
+    
+    /**
+     * Set the line number of the line.
+     * 
+     * @param line_number The line number of the line.
+     */
+    public void setLineNumber(int line_number) {
+	this.line_number = line_number;
+    }
+    
+    /**
      * Returns whether or not the Line has a valid tag.
      * 
      * @return True if the line has a valid tag, and false otherwise.
      */
     public boolean hasValidTag() {
-	return this.hasValidTag;
+        return this.hasValidTag;
     }
 }

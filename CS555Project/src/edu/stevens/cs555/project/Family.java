@@ -49,10 +49,11 @@ public class Family extends GEDCOMRecord {
      * Create a new Family instance given its ID.
      * 
      * @param id The ID of the family.
+     * @param line_number The line number from the GEDCOM source file this record was created with.
      */
-    public Family(int id) {
-	super(id);
-	this.children = new ArrayList<Integer>();
+    public Family(int id, int line_number) {
+        super(id, line_number);
+        this.children = new ArrayList<Integer>();
     }
     
     /**
@@ -101,7 +102,7 @@ public class Family extends GEDCOMRecord {
     /**
      * Add a child to the family.
      * 
-     * @param children The child to add to the family.
+     * @param child The child to add to the family.
      */
     public void addChild(int child) {
         this.children.add(child);
@@ -113,7 +114,7 @@ public class Family extends GEDCOMRecord {
      * @return The marriage date for the family.
      */
     public String getMarr() {
-	return this.marr;
+        return this.marr;
     }
     
     /**
@@ -122,7 +123,7 @@ public class Family extends GEDCOMRecord {
      * @param marr The marriage date for the family.
      */
     public void setMarr(String marr) {
-	this.marr = marr;
+        this.marr = marr;
     }
     
     /**
@@ -131,7 +132,7 @@ public class Family extends GEDCOMRecord {
      * @return The divorce date for the family.
      */
     public String getDiv() {
-	return this.div;
+        return this.div;
     }
     
     /**
@@ -140,7 +141,7 @@ public class Family extends GEDCOMRecord {
      * @param div The divorce date for the family.
      */
     public void setDiv(String div) {
-	this.div = div;
+        this.div = div;
     }
     
     /**
@@ -151,18 +152,19 @@ public class Family extends GEDCOMRecord {
      * @throws GEDCOMParseException If the numeric ID has an invalid format.
      */
     public static int getNumericIdFromXrefId(String xref_id) throws GEDCOMParseException {
-	return getNumericIdFromXrefId(xref_id, XREF_FORMAT);
+        return getNumericIdFromXrefId(xref_id, XREF_FORMAT);
     }
 
     /**
      * Creates a new instance of a Family object given the Xref ID read from a GEDCOM file.
      * 
      * @param xref_id The XREF-ID read from the GEDCOM file.
+     * @param line_number The line number from the GEDCOM source file this record was created with.
      * @return The new instance of a Family record.
      * @throws GEDCOMParseException if the xref_id is invalid.
      */
-    public static Family createFromXrefId(String xref_id) throws GEDCOMParseException {
-	return new Family(getNumericIdFromXrefId(xref_id));
+    public static Family createFromXrefId(String xref_id, int line_number) throws GEDCOMParseException {
+        return new Family(getNumericIdFromXrefId(xref_id), line_number);
     }
 
     /* (non-Javadoc)
@@ -170,8 +172,8 @@ public class Family extends GEDCOMRecord {
      */
     @Override
     public String toString() {
-	return getClass().getName() + " {\n\thusb: " + husb + "\n\twife: "
-		+ wife + "\n\tchildren: " + children + "\n\tmarr: " + marr
-		+ "\n\tdiv: " + div + "\n\tid: " + id + "\n}\n";
+        return getClass().getName() + " {\n\thusb: " + husb + "\n\twife: "
+            + wife + "\n\tchildren: " + children + "\n\tmarr: " + marr
+            + "\n\tdiv: " + div + "\n\tid: " + id + "\n}\n";
     }
 }

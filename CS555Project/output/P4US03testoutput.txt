@@ -1,0 +1,47 @@
+Reading GEDCOM file at "C:\Users\Kev\Documents\CS555\W4\InvalidDeathdateTest.ged"...
+
+Individuals:
+
+1 John /Doe/
+2 Bill /Taylor/
+3 Jane /Taylor/
+4 Bob /Taylor/
+5 Meghan /Thompson/
+6 Jill /Taylor/
+7 Ashley /Taylor/
+8 Angela /Johnson/
+9 Samantha /Price/
+10 David /Price/
+11 Tom /Ford/
+12 Ron /Murphy/
+13 William /Ford/
+14 Alison /Murphy/
+
+
+Families:
+
+1
+  Husband: John /Doe/
+  Wife: Jane /Taylor/
+2
+  Husband: Bill /Taylor/
+  Wife: Meghan /Thompson/
+3
+  Husband: Bob /Taylor/
+  Wife: Angela /Johnson/
+4
+  Husband: Ron /Murphy/
+  Wife: Samantha /Price/
+5
+  Husband: Tom /Ford/
+  Wife: Samantha /Price/
+6
+  Husband: David /Price/
+  Wife: Jill /Taylor/
+Thu Jan 22 00:00:00 EST 2015
+Thu Jan 22 00:00:00 EST 2015
+
+The following validation anomalies were found with the GEDCOM file...
+
+	Anomaly with the record at line 89: Tom /Ford/ is deceased.
+	Anomaly with the record at line 89: Tom /Ford/ 's Deathdate is earlier than birth date
