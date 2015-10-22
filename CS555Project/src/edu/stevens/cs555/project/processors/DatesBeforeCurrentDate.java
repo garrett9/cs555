@@ -14,42 +14,72 @@ import edu.stevens.cs555.project.Individual;
  */
 public class DatesBeforeCurrentDate extends GEDCOMProcessor {
 	
+	DateFormat format;
+	
     public DatesBeforeCurrentDate() {
         super("US01");
+        format = new SimpleDateFormat("d MMM yyyy");
     }
 
+    /*
+     * Check if a GEDCOM date (string) is after the current date
+     * @return false if the gedcomDate is after the current date, true otherwise
+     */
+    private boolean isValidGEDCOMDate(String gedcomDate) {
+    	Date now = new Date();
+    	
+    	// Check marriage date
+        if (gedcomDate != null) {
+            try {
+				Date date = format.parse(gedcomDate);
+				if (date != null && date.after(now)) {
+					return false;
+				}
+			} catch (ParseException e) {
+				e.printStackTrace();				
+			}
+        }
+        
+        return true;
+    	
+    }
+    
+    private void checkFamilyMarriage(Family family) {   	
+    	if(!isValidGEDCOMDate(family.getMarr())) {
+    		this.addValidationException(new GEDCOMValidationException("Marriage date is after current date.", family.getLineNumber()));
+    	}
+    }
+    
+    private void checkFamilyDivorce(Family family) {
+    	if(!isValidGEDCOMDate(family.getDiv())) {
+    		this.addValidationException(new GEDCOMValidationException("Divorce date is after current date.", family.getLineNumber()));
+    	}
+    }
+    
+    private void checkIndividualBirth(Individual individual) {
+    	if(!isValidGEDCOMDate(individual.getBirt())) {
+    		this.addValidationException(new GEDCOMValidationException("Birth date is after current date.", individual.getLineNumber()));
+    	}    	
+    }
+    
+    private void checkIndividualDeath(Individual individual) {
+    	if(!isValidGEDCOMDate(individual.getDeat())) {
+    		this.addValidationException(new GEDCOMValidationException("Death date is after current date.", individual.getLineNumber()));
+    	}    	
+    }
+    
     @Override
     public void run(Family[] families, Individual[] individuals) {
-    	Date now = new Date();
-    	DateFormat format = new SimpleDateFormat("d MMM yyyy");
     	
     	// Check dates associated with families
         for (Family family : families) {
             if (family == null) {
             	continue;
-            }
+            }                       
             
-            // Check marriage date
-            if (family.getMarr() != null) {
-	            try {
-					Date marriage_date = format.parse(family.getMarr());
-					if (marriage_date != null && marriage_date.after(now)) {
-						this.addValidationException(new GEDCOMValidationException("Marriage date is after current date.", family.getLineNumber()));
-					}
-				} catch (ParseException e) {
-				}
-            }
+            checkFamilyMarriage(family);
+            checkFamilyDivorce(family);
             
-            // Check divorce date
-            if (family.getDiv() != null) {
-	            try {
-					Date divorce_date = format.parse(family.getDiv());
-					if (divorce_date != null && divorce_date.after(now)) {
-						this.addValidationException(new GEDCOMValidationException("Divorce date is after current date.", family.getLineNumber()));
-					}
-				} catch (ParseException e) {
-				}
-            }
         }
 
         // Check dates associated with individuals
@@ -58,27 +88,9 @@ public class DatesBeforeCurrentDate extends GEDCOMProcessor {
             	continue;
             }
             
-            // Check birth date
-            if (individual.getBirt() != null) {
-	            try {
-					Date birth_date = format.parse(individual.getBirt());
-					if (birth_date != null && birth_date.after(now)) {
-						this.addValidationException(new GEDCOMValidationException("Birth date is after current date.", individual.getLineNumber()));
-					}
-				} catch (ParseException e) {
-				}
-            }
+            checkIndividualBirth(individual);
+            checkIndividualDeath(individual);
             
-            // Check death date
-            if (individual.getDeat() != null) {
-	            try {
-					Date death_date = format.parse(individual.getDeat());
-					if (death_date != null && death_date.after(now)) {
-						this.addValidationException(new GEDCOMValidationException("Death date is after current date.", individual.getLineNumber()));
-					}
-				} catch (ParseException e) {
-				}
-            }
         }
     }
 }
