@@ -1,17 +1,6 @@
 package edu.stevens.cs555.project;
 
-import edu.stevens.cs555.project.processors.DatesBeforeCurrentDate;
-import edu.stevens.cs555.project.processors.GEDCOMProcessor;
-import edu.stevens.cs555.project.processors.ValidDates;
-import edu.stevens.cs555.project.processors.ListDeceased;
-import edu.stevens.cs555.project.processors.ListRecentBirths;
-import edu.stevens.cs555.project.processors.ListRecentDeaths;
-import edu.stevens.cs555.project.processors.Under150;
-import edu.stevens.cs555.project.processors.UniqueNameAndBirth;
-import edu.stevens.cs555.project.processors.BirthBeforeDeath;
-import edu.stevens.cs555.project.processors.BirthBeforeMarriage;
-import edu.stevens.cs555.project.processors.DivorceBeforeDeath;
-import edu.stevens.cs555.project.processors.MarriageBeforeDeath;
+import edu.stevens.cs555.project.processors.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -235,7 +224,8 @@ public class GEDCOMReader {
         gedcom_functions.add(new ListRecentDeaths());
         gedcom_functions.add(new DivorceBeforeDeath());
         gedcom_functions.add(new MarriageBeforeDeath());
-        
+        gedcom_functions.add(new BirthAfterMarriageOfParents());
+
         for(GEDCOMProcessor gedcom_function : gedcom_functions) {
             gedcom_function.run(families, individuals);
             validation_exceptions.addAll(gedcom_function.getValidationErrors());
