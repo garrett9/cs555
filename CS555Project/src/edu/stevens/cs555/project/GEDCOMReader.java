@@ -10,6 +10,8 @@ import edu.stevens.cs555.project.processors.Under150;
 import edu.stevens.cs555.project.processors.UniqueNameAndBirth;
 import edu.stevens.cs555.project.processors.BirthBeforeDeath;
 import edu.stevens.cs555.project.processors.BirthBeforeMarriage;
+import edu.stevens.cs555.project.processors.DivorceBeforeDeath;
+import edu.stevens.cs555.project.processors.MarriageBeforeDeath;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -231,6 +233,8 @@ public class GEDCOMReader {
         gedcom_functions.add(new ValidDates());
         gedcom_functions.add(new ListRecentBirths());
         gedcom_functions.add(new ListRecentDeaths());
+        gedcom_functions.add(new DivorceBeforeDeath());
+        gedcom_functions.add(new MarriageBeforeDeath());
         
         for(GEDCOMProcessor gedcom_function : gedcom_functions) {
             gedcom_function.run(families, individuals);
