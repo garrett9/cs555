@@ -29,7 +29,7 @@ public class ListRecentDeaths extends GEDCOMProcessor {
             	continue;
             }
                                 	
-            if (individual.getBirt() != null) {
+            if (individual.getDeat() != null) {
                 try {
     				Date date = format.parse(individual.getDeat());
     				if (date != null && daysBetweenDates(date, now) <= 30) {    					
