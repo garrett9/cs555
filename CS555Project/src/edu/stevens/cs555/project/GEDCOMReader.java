@@ -225,6 +225,7 @@ public class GEDCOMReader {
         gedcom_functions.add(new DivorceBeforeDeath());
         gedcom_functions.add(new MarriageBeforeDeath());
         gedcom_functions.add(new BirthAfterMarriageOfParents());
+        gedcom_functions.add(new BirthBeforeDeathOfParents());
 
         for(GEDCOMProcessor gedcom_function : gedcom_functions) {
             gedcom_function.run(families, individuals);
