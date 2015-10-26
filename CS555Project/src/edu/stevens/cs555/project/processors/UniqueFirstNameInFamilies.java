@@ -42,7 +42,7 @@ public class UniqueFirstNameInFamilies extends GEDCOMProcessor {
 		    if(individuals[child_id] != null) {
 			Individual i = individuals[child_id];
 			String name_date = i.getName() + i.getBirt();
-			if(children_map.get(name_date) != null)
+			if(children_map.get(name_date) == null)
 			    children_map.put(name_date, i);
 			else
 			    this.addValidationException(new GEDCOMValidationException("There already exists an individual with the same name and birth date as this individual within the same family!", i.getLineNumber()));

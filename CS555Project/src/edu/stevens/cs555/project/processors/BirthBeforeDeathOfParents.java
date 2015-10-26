@@ -86,7 +86,7 @@ public class BirthBeforeDeathOfParents extends GEDCOMProcessor {
                         Calendar c = Calendar.getInstance();
                         c.setTime(husbDeath);
                         c.add(Calendar.MONTH, 9);
-
+                        
                         if (birthDate.after(c.getTime())) {
                             this.addValidationException(new GEDCOMValidationException("Birth date of child is over 9 months after father's death", child.getLineNumber()));
                         }

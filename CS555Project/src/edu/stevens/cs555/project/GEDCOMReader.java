@@ -84,8 +84,10 @@ public class GEDCOMReader {
                             families[family.getId()] = family;
                             last_record = family;
                         }
-                        else
+                        else {
                            validation_exceptions.add(new GEDCOMValidationException("A family with the same ID already exists!", line.getLineNumber())); 
+                           last_record = null;
+                        }
                        
                     } else {
                         Individual individual = Individual.createFromXrefId(xref_line.getXrefId(), line.getLineNumber());
@@ -94,8 +96,10 @@ public class GEDCOMReader {
                             individuals[individual.getId()] = individual;
                             last_record = individual;
                         }
-                        else
+                        else {
                             validation_exceptions.add(new GEDCOMValidationException("An individual with the same ID already exists!", line.getLineNumber()));
+                            last_record = null;
+                        }
                     }
                 } else {
                     /*
@@ -149,6 +153,7 @@ public class GEDCOMReader {
                     } else {
                         // The last record recorded was an Individual instance. Therefore, we watch out here for all Individual related information.
                         Individual individual = (Individual) last_record;
+                        
                         String tag = args_line.getTag().toLowerCase();
 
                         if(tag.equals("name")) { // The name of the individual
@@ -226,6 +231,8 @@ public class GEDCOMReader {
         gedcom_functions.add(new MarriageBeforeDeath());
         gedcom_functions.add(new BirthAfterMarriageOfParents());
         gedcom_functions.add(new BirthBeforeDeathOfParents());
+        gedcom_functions.add(new UniqueFirstNameInFamilies());
+        gedcom_functions.add(new UniqueFamiliesBySpouses());
 
         for(GEDCOMProcessor gedcom_function : gedcom_functions) {
             gedcom_function.run(families, individuals);

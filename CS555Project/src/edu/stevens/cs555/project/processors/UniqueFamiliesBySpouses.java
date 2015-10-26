@@ -26,7 +26,8 @@ public class UniqueFamiliesBySpouses extends GEDCOMProcessor {
 	for(Family family : families) {
 	    if(family != null) {
 		String spouses_mar = individuals[family.getHusb()].getName() + individuals[family.getWife()].getName() + family.getMarr();
-		if(family_map.get(spouses_mar) != null)
+
+		if(family_map.get(spouses_mar) == null)
 		    family_map.put(spouses_mar, family);
 		else
 		    this.addValidationException(new GEDCOMValidationException("A family record with the same husband's name, wife's name, and marriage date as this family already exists!", family.getLineNumber()));

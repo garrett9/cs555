@@ -45,6 +45,7 @@ public class DivorceBeforeDeath extends GEDCOMProcessor {
 										//System.out.println(i.getId());
 										death = formatter.parse(deat);
 										divor = formatter.parse(divo);
+											System.out.println(death + " " + divor);
 											if(DivorceBeforeDeath.isValidDivo(death, divor) == false) {
 												this.addValidationException(new GEDCOMValidationException(i.getName() + " 's Death Date is earlier than Divorce date", i.getLineNumber()));
 											}		
