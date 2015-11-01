@@ -226,6 +226,7 @@ public class GEDCOMReader {
         gedcom_functions.add(new MarriageBeforeDeath());
         gedcom_functions.add(new BirthAfterMarriageOfParents());
         gedcom_functions.add(new BirthBeforeDeathOfParents());
+        gedcom_functions.add(new FewerThan15Siblings());
 
         for(GEDCOMProcessor gedcom_function : gedcom_functions) {
             gedcom_function.run(families, individuals);
