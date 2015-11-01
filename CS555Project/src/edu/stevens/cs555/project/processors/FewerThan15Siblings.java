@@ -17,8 +17,8 @@ public class FewerThan15Siblings extends GEDCOMProcessor {
             	continue;
             }
 
-			if (family.getChildren().size() > 15) {
-				this.addValidationException(new GEDCOMValidationException("Family has more than 15 siblings.", family.getLineNumber()));
+			if (family.getChildren().size() >= 15) {
+				this.addValidationException(new GEDCOMValidationException("Family has 15 or more siblings.", family.getLineNumber()));
 			}
         }		
 	}
