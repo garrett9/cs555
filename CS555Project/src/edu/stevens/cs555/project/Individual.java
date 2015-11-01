@@ -57,7 +57,7 @@ public class Individual extends GEDCOMRecord {
      * @param line_number The line number from the GEDCOM source file this record was created with.
      */
     public Individual(int id, int line_number) {
-	super(id, line_number);
+	    super(id, line_number);
     }
 
     /**
@@ -66,7 +66,7 @@ public class Individual extends GEDCOMRecord {
      * @return The name of the individual.
      */
     public String getName() {
-	return name;
+	    return name;
     }
 
     /**
@@ -75,7 +75,19 @@ public class Individual extends GEDCOMRecord {
      * @param name The name of the individual.
      */
     public void setName(String name) {
-	this.name = name;
+	    this.name = name;
+    }
+
+    /**
+     * Get the last name of an individual
+     *
+     * @return The last name of the individual.
+     */
+    public String getLastName() {
+        int firstSlashIndex = name.indexOf('/');
+        int lastSlashIndex = name.indexOf('/', firstSlashIndex + 1);
+
+        return name.substring(firstSlashIndex + 1, lastSlashIndex);
     }
 
     /**
@@ -84,7 +96,7 @@ public class Individual extends GEDCOMRecord {
      * @return True if the individual is a male; False otherwise
      */
     public String getSex() {
-	return this.sex;
+	    return this.sex;
     }
 
     /**
@@ -93,7 +105,7 @@ public class Individual extends GEDCOMRecord {
      * @param sex True if the individual is a male; False otherwise.
      */
     public void setSex(String sex) {
-	this.sex = sex;
+        this.sex = sex;
     }
 
     /**
@@ -102,7 +114,7 @@ public class Individual extends GEDCOMRecord {
      * @return The family ID this individual is a child to.
      */
     public int getFamc() {
-	return famc;
+	    return famc;
     }
 
     /**
@@ -111,7 +123,7 @@ public class Individual extends GEDCOMRecord {
      * @param famc The family ID this individual is a child for.
      */
     public void setFamc(int famc) {
-	this.famc = famc;
+	    this.famc = famc;
     }
 
     /**
@@ -120,7 +132,7 @@ public class Individual extends GEDCOMRecord {
      * @return The family ID this individual is a spouse for.
      */
     public int getFams() {
-	return fams;
+        return fams;
     }
 
     /**
@@ -129,7 +141,7 @@ public class Individual extends GEDCOMRecord {
      * @param fams The family ID this individual is a spouse for.
      */
     public void setFams(int fams) {
-	this.fams = fams;
+        this.fams = fams;
     }
 
     /**
@@ -138,7 +150,7 @@ public class Individual extends GEDCOMRecord {
      * @return The birth date of the individual
      */
     public String getBirt() {
-	return birt;
+	    return birt;
     }
 
     /**
@@ -147,8 +159,7 @@ public class Individual extends GEDCOMRecord {
      * @param birt The birth date of the individual.
      */
     public void setBirt(String birt) {
-	this.birt = birt;
-
+	    this.birt = birt;
     }
 
     /**
@@ -157,7 +168,7 @@ public class Individual extends GEDCOMRecord {
      * @return The death date of the individual
      */
     public String getDeat() {
-	return deat;
+	    return deat;
     }
 
     /**
@@ -167,19 +178,8 @@ public class Individual extends GEDCOMRecord {
      * also checks if the death date is valid and return true also false when called
     */ 
     public void setDeat(String deat) {
-	this.deat = deat;
+	    this.deat = deat;
     }
-
-    /**
-     * Returns whether death date is valid or not
-     * 
-     * @return True if the death date of the Individual is valid; false otherwise.
-     
-    public boolean validDeat() {
-	return this.validDeat;
-
-    }
-    */
     
     /**
      * Extract the numeric ID from an Individual record's XREF ID.
@@ -189,7 +189,7 @@ public class Individual extends GEDCOMRecord {
      * @throws GEDCOMParseException If the numeric ID has an invalid format.
      */
     public static int getNumericIdFromXrefId(String xref_id) throws GEDCOMParseException {
-	return getNumericIdFromXrefId(xref_id, XREF_FORMAT);
+        return getNumericIdFromXrefId(xref_id, XREF_FORMAT);
     }
 
     /**
@@ -201,7 +201,7 @@ public class Individual extends GEDCOMRecord {
      * @throws GEDCOMParseException if the xref_id is invalid.
      */
     public static Individual createFromXrefId(String xref_id, int line_number) throws GEDCOMParseException {
-	return new Individual(getNumericIdFromXrefId(xref_id), line_number);
+	    return new Individual(getNumericIdFromXrefId(xref_id), line_number);
     }
 
     /* (non-Javadoc)

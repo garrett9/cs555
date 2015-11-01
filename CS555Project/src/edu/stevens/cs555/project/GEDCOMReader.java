@@ -234,6 +234,7 @@ public class GEDCOMReader {
         gedcom_functions.add(new UniqueFirstNameInFamilies());
         gedcom_functions.add(new UniqueFamiliesBySpouses());
         gedcom_functions.add(new FewerThan15Siblings());
+        gedcom_functions.add(new MaleLastNames());
 
         for(GEDCOMProcessor gedcom_function : gedcom_functions) {
             gedcom_function.run(families, individuals);
