@@ -1,0 +1,20 @@
+Reading GEDCOM file at "C:\Users\Kev\Documents\CS555\W9\US10test.ged"...
+
+Individuals:
+
+1 Kim /Kardasian/
+Age is 30 
+2 Kanye /West/
+Age is 30 
+
+
+Families:
+
+1
+  Husband: Kanye /West/
+  Wife: Kim /Kardasian/
+
+The following validation anomalies were found with the GEDCOM file...
+
+	Anomaly with the record at line 32: Divorce date is after current date.
+	Anomaly with the record at line 14: Kim /Kardasian/ 's Age at Marriage is less than  14

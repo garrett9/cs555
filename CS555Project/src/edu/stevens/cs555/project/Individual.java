@@ -1,5 +1,9 @@
 package edu.stevens.cs555.project;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * A class for representing a single individual from a GEDCOM file.
@@ -41,6 +45,14 @@ public class Individual extends GEDCOMRecord {
     private int fams;
 
     /**
+     * The age of the indiviual
+     */
+    
+    private int age;
+    
+    SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yyyy");
+    Date birth;
+    /**
      * The birth date for the family.
      */
     private String birt;
@@ -56,6 +68,7 @@ public class Individual extends GEDCOMRecord {
      * @param id The ID of the individual.
      * @param line_number The line number from the GEDCOM source file this record was created with.
      */
+    
     public Individual(int id, int line_number) {
 	    super(id, line_number);
     }
@@ -90,6 +103,16 @@ public class Individual extends GEDCOMRecord {
         return name.substring(firstSlashIndex + 1, lastSlashIndex);
     }
 
+    public static int getAgeFromNow(Date birtdate) {
+    	Calendar today = Calendar.getInstance();
+	    Calendar birthDate = Calendar.getInstance();
+
+	    int age = 0;
+	    birthDate.setTime(birtdate);
+	    age = today.get(Calendar.YEAR) - birthDate.get(Calendar.YEAR);
+	    
+	return age;
+	}
     /**
      * Get the gender of the individual.
      * 
@@ -160,6 +183,22 @@ public class Individual extends GEDCOMRecord {
      */
     public void setBirt(String birt) {
 	    this.birt = birt;
+	    try {
+	    birth = formatter.parse(birt);
+	    //adding age when birthdate is added US27
+	    this.age = getAgeFromNow(birth);
+	    }
+	    catch(ParseException e) {
+			//syntax error
+	    }
+    }
+    /**
+     * Get the death date of the individual.
+     * 
+     * @return The death date of the individual
+     */
+    public int getAge() {
+	    return age;
     }
 
     /**

@@ -190,8 +190,9 @@ public class GEDCOMReader {
                     continue;
                 }
 
-                System.out.println(individual.getId() + " " + individual.getName());                
-               
+                System.out.println(individual.getId() + " " + individual.getName()); 
+                //Printing the age of the individuals
+                System.out.println("Age is "+ individual.getAge() + " ");  
             }
 
             // Print familes
@@ -234,6 +235,7 @@ public class GEDCOMReader {
         gedcom_functions.add(new UniqueFirstNameInFamilies());
         gedcom_functions.add(new UniqueFamiliesBySpouses());
         gedcom_functions.add(new FewerThan15Siblings());
+        gedcom_functions.add(new MarriageAfter14());
         gedcom_functions.add(new MaleLastNames());
 
         for(GEDCOMProcessor gedcom_function : gedcom_functions) {
