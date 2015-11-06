@@ -22,15 +22,13 @@ public class GenderRoles extends GEDCOMProcessor {
 			
 			if(husbandID >= 0 && husbandID < individuals.length){
 				Individual husband = individuals[husbandID];				
-				System.out.println(husband.getName() + ": Husband: " + husband.getSex());
 				if(!husband.getSex().equals("M")) {
 					this.addValidationException(new GEDCOMValidationException("Husband " + husband.getName() + " is not a male.", f.getLineNumber()));
 				}
 			}
 			
 			if(wifeID >= 0 && wifeID < individuals.length){
-				Individual wife = individuals[wifeID];
-				System.out.println(wife.getName() + ": Wife: " + wife.getSex());
+				Individual wife = individuals[wifeID];				
 				if(!wife.getSex().equals("F")) {
 					this.addValidationException(new GEDCOMValidationException("Wife " + wife.getName() + " is not a female.", f.getLineNumber()));
 				}
