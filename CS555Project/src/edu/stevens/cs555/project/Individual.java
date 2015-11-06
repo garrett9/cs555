@@ -125,7 +125,7 @@ public class Individual extends GEDCOMRecord {
     /**
      * Set the gender of the individual.
      * 
-     * @param sex True if the individual is a male; False otherwise.
+     * @param sex "M" if the individual is a male; "F" if the individual is female
      */
     public void setSex(String sex) {
         this.sex = sex;
