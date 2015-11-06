@@ -1,36 +1,67 @@
-Reading GEDCOM file at "C:\Users\gshevac1\git\cs555\CS555Project\test_files\main_test_file.ged"...
+Reading GEDCOM file at "/home/peter/git/cs555/CS555Project/acceptance_test/test_file.ged"...
 
 Individuals:
 
 1 John /Doe/
+Age is 85 
 2 Bill /Taylor/
+Age is 62 
 3 Jane /Taylor/
+Age is 215 
 4 Bob /Taylor/
+Age is 39 
 5 Meghan /Thompson/
+Age is 63 
 6 Jill /Taylor/
+Age is 60 
 7 Ashley /Taylor/
+Age is 11 
 8 Angela /Johnson/
+Age is 38 
 9 Samantha /Murphy/
+Age is 37 
 10 David /Price/
+Age is 59 
 11 Tom /Ford/
+Age is 38 
 12 Ron /Murphy/
+Age is 37 
 13 William /Ford/
+Age is 14 
 14 Alison /Murphy/
+Age is 3 
 15 Mike /Taylor/
+Age is 37 
 16 Jane /Price/
+Age is 36 
 17 Happy /Gilmore/
+Age is 36 
 18 Peter /Taylor/
+Age is 57 
 19 Samantha /Ryan/
+Age is 58 
 20 James /Taylor/
+Age is 55 
 21 Jordan /Taylor/
+Age is 56 
 22 Dan /Gilmore/
+Age is -2 
 23 Mark /Price/
+Age is 25 
 24 Mark /Price/
+Age is 25 
 25 Ron /Murphy/
+Age is 37 
 26 Samantha /Murphy/
+Age is 29 
 27 Ryan /Taylor/
+Age is 1 
 29 Kim /Kardasian/
+Age is 30 
 30 Kanye /West/
+Age is 30 
+31 Bday /West/
+Age is 35 
 
 
 Families:
@@ -86,9 +117,9 @@ The following validation anomalies were found with the GEDCOM file...
 	Anomaly with the record at line 199: Kanye /West/ is deceased.
 	Anomaly with the record at line 97: Mike /Taylor/ 's Deathdate is earlier than birth date
 	Anomaly with the record at line 45: Ashley /Taylor/ 's Marriage Date is earlier than birth date
-	Anomaly with the record at line 274: Divorce date is after current date.
+	Anomaly with the record at line 290: Divorce date is after current date.
 	Anomaly with the record at line 148: Birth date is after current date.
-	Anomaly with the record at line 264: Marriage date is invalid: 40 JUL 1988
+	Anomaly with the record at line 280: Marriage date is invalid: 40 JUL 1988
 	Anomaly with the record at line 148: Dan /Gilmore/ was born in the last 30 days.
 	Anomaly with the record at line 2: John /Doe/ died in the last 30 days.
 	Anomaly with the record at line 71: Tom /Ford/ 's Death Date is earlier than Divorce date
@@ -97,4 +128,13 @@ The following validation anomalies were found with the GEDCOM file...
 	Anomaly with the record at line 91: Birth date of child is before parents' marriage date.
 	Anomaly with the record at line 179: Birth date of child is after mother's death.
 	Anomaly with the record at line 160: There already exists an individual with the same name and birth date as this individual within the same family!
-	Anomaly with the record at line 269: A family record with the same husband's name, wife's name, and marriage date as this family already exists!
+	Anomaly with the record at line 285: A family record with the same husband's name, wife's name, and marriage date as this family already exists!
+	Anomaly with the record at line 212: Family has 15 or more siblings.
+	Anomaly with the record at line 45: Ashley /Taylor/ 's Age at Marriage is less than  14
+	Anomaly with the record at line 51: Angela /Johnson/ 's Age at Marriage is less than  14
+	Anomaly with the record at line 57: Samantha /Murphy/ 's Age at Marriage is less than  14
+	Anomaly with the record at line 212: Male family members have different last names.
+	Anomaly with the record at line 234: Male family members have different last names.
+	Anomaly with the record at line 290: Husband Kim /Kardasian/ is not a male.
+	Anomaly with the record at line 290: Wife Kanye /West/ is not a female.
+	Anomaly with the record at line 206: Bday /West/'s birthday occurs in the next 30 days!
