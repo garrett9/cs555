@@ -238,6 +238,7 @@ public class GEDCOMReader {
         gedcom_functions.add(new MarriageAfter14());
         gedcom_functions.add(new MaleLastNames());
         gedcom_functions.add(new GenderRoles());
+        gedcom_functions.add(new UpcomingBirthdays());
 
         for(GEDCOMProcessor gedcom_function : gedcom_functions) {
             gedcom_function.run(families, individuals);
