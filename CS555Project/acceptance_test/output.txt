@@ -1,4 +1,3 @@
-Reading GEDCOM file at "C:\Users\Kev\Documents\CS555\W9\test_file.ged"...
 
 Individuals:
 
@@ -68,6 +67,12 @@ Age is 35
 Age is 30 
 33 Brad /Pitt/
 Age is 30 
+34 Ben /Pitt/
+Age is 30 
+35 Donna /Pitt/
+Age is 29 
+36 Harry /Gilmore/
+Age is 28 
 
 
 Families:
@@ -108,6 +113,12 @@ Families:
 12
   Husband: Brad /Pitt/
   Wife: Angelina /Taylor/
+13
+  Husband: Ben /Pitt/
+  Wife: Donna /Pitt/
+14
+  Husband: Harry /Gilmore/
+  Wife: Jill /Taylor/
 
 The following validation anomalies were found with the GEDCOM file...
 
@@ -125,19 +136,26 @@ The following validation anomalies were found with the GEDCOM file...
 	Anomaly with the record at line 144: Mike /Taylor/ 's Deathdate is earlier than birth date
 	Anomaly with the record at line 23: Bill /Taylor/ 's Marriage Date is earlier than birth date
 	Anomaly with the record at line 67: Angela /Johnson/ 's Marriage Date is earlier than birth date
-	Anomaly with the record at line 383: Divorce date is after current date.
+	Anomaly with the record at line 414: Divorce date is after current date.
 	Anomaly with the record at line 209: Birth date is after current date.
-	Anomaly with the record at line 371: Marriage date is invalid: 40 JUL 1988
+	Anomaly with the record at line 402: Marriage date is invalid: 40 JUL 1988
 	Anomaly with the record at line 209: Dan /Gilmore/ was born in the last 30 days.
 	Anomaly with the record at line 14: John /Doe/ died in the last 30 days.
+	Anomaly with the record at line 118: Tom /Ford/ 's Death Date is earlier than Marriage date
 	Anomaly with the record at line 58: Birth date of child is before parents' marriage date.
 	Anomaly with the record at line 100: Birth date of child is before parents' marriage date.
 	Anomaly with the record at line 136: Birth date of child is before parents' marriage date.
+	Anomaly with the record at line 314: Birth date of child is before parents' marriage date.
+	Anomaly with the record at line 304: Birth date of child is before parents' marriage date.
 	Anomaly with the record at line 250: Birth date of child is after mother's death.
 	Anomaly with the record at line 225: There already exists an individual with the same name and birth date as this individual within the same family!
-	Anomaly with the record at line 377: A family record with the same husband's name, wife's name, and marriage date as this family already exists!
+	Anomaly with the record at line 408: A family record with the same husband's name, wife's name, and marriage date as this family already exists!
 	Anomaly with the record at line 23: Bill /Taylor/ 's Age at Marriage is less than  14
 	Anomaly with the record at line 67: Angela /Johnson/ 's Age at Marriage is less than  14
 	Anomaly with the record at line 92: Ashley /Taylor/ 's Age at Marriage is less than  14
-	Anomaly with the record at line 304: Male family members have different last names.
+	Anomaly with the record at line 128: William /Ford/ 's Age at Marriage is less than  14
+	Anomaly with the record at line 334: Male family members have different last names.
 	Anomaly with the record at line 278: Bday /West/'s birthday occurs in the next 30 days!
+	Anomaly with the record at line 324: Harry /Gilmore/ cannot be married to a parent he/she descended from!
+	Anomaly with the record at line 314: Donna /Pitt/ cannot be married to a sibling!
+	Anomaly with the record at line 304: Ben /Pitt/ cannot be married to a sibling!
