@@ -78,14 +78,14 @@ public class Family extends GEDCOMRecord {
 
 	    Boolean isAnniSoon = false;
 	    MarriageDate.setTime(Marridate);
-	    int MonthDiff = today.get(Calendar.MONTH) - MarriageDate.get(Calendar.MONTH) + 2;
+	    int MonthDiff = today.get(Calendar.MONTH) - MarriageDate.get(Calendar.MONTH) + 1;
 	    int DateDiff = MarriageDate.get(Calendar.DAY_OF_MONTH) - today.get(Calendar.DAY_OF_MONTH);
 	    
 	    if (MonthDiff == 0 && DateDiff > 0 )
 	    {
 	    	isAnniSoon = true; 	
 	    }
-	    else if (MonthDiff < 2)
+	    else if (MonthDiff < 1 && DateDiff <= 0 )
 	    {
 	    	isAnniSoon = true; 
 	    }
