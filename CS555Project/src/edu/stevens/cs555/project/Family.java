@@ -1,6 +1,10 @@
 package edu.stevens.cs555.project;
 
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 /**
  * A class representing a Family from a GEDCOM file.
@@ -41,9 +45,19 @@ public class Family extends GEDCOMRecord {
     private String marr;
     
     /**
+     * The MARRIAGE date for the family in date format.
+     */
+    
+    private Date marrDate;
+    
+    private Boolean isAnniSoon;
+    
+    /**
      * The DIVORCE date for the family.
      */
     private String div;
+    
+    SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yyyy");
     
     /**
      * Create a new Family instance given its ID.
@@ -56,6 +70,29 @@ public class Family extends GEDCOMRecord {
         this.children = new ArrayList<Integer>();
     }
     
+    
+    // US39 Kevin Cho
+    public boolean isAnniversarySoon(Date Marridate) {
+    	Calendar today = Calendar.getInstance();
+	    Calendar MarriageDate = Calendar.getInstance();
+
+	    Boolean isAnniSoon = false;
+	    MarriageDate.setTime(Marridate);
+	    int MonthDiff = today.get(Calendar.MONTH) - MarriageDate.get(Calendar.MONTH) + 2;
+	    int DateDiff = MarriageDate.get(Calendar.DAY_OF_MONTH) - today.get(Calendar.DAY_OF_MONTH);
+	    
+	    if (MonthDiff == 0 && DateDiff > 0 )
+	    {
+	    	isAnniSoon = true; 	
+	    }
+	    else if (MonthDiff < 2)
+	    {
+	    	isAnniSoon = true; 
+	    }
+	    
+	return isAnniSoon;
+    }
+	
     /**
      * @return the husb
      */
@@ -117,6 +154,9 @@ public class Family extends GEDCOMRecord {
         return this.marr;
     }
     
+    public Date getMarrDate() {
+        return this.marrDate;
+    }
     /**
      * Set the marriage date for the family.
      * 
@@ -124,6 +164,21 @@ public class Family extends GEDCOMRecord {
      */
     public void setMarr(String marr) {
         this.marr = marr;
+        try {
+    	    this.marrDate = formatter.parse(marr);
+    	    this.isAnniSoon = isAnniversarySoon(marrDate);
+    	    }
+    	    catch(ParseException e) {
+    			//syntax error
+    	    }
+    }
+    /**
+     * Get isAnniSoon.
+     * 
+     * @return if the Anniversary is coming up.
+     */
+    public Boolean getIsAnniSoon() {
+        return this.isAnniSoon;
     }
     
     /**

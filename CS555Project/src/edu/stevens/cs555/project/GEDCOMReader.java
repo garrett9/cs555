@@ -192,7 +192,7 @@ public class GEDCOMReader {
 
                 System.out.println(individual.getId() + " " + individual.getName()); 
                 //Printing the age of the individuals
-                System.out.println("Age is "+ individual.getAge() + " ");  
+                System.out.println("Age: "+ individual.getAge() + " ");  
             }
 
             // Print familes
@@ -207,9 +207,17 @@ public class GEDCOMReader {
 
                 Individual wife = individuals[family.getWife()];
                 String wifeName = wife != null ? wife.getName() : "";
+                
+                		
                 System.out.println(family.getId());
                 System.out.println("  Husband: " + husbandName);
                 System.out.println("  Wife: " + wifeName);
+                
+                //US39
+                if (family.getIsAnniSoon() == true)
+                {
+                	System.out.println("Their anniversary will be coming up in a month");
+                }
             }
         } catch(GEDCOMParseException e) {
             error(e.getMessage());
