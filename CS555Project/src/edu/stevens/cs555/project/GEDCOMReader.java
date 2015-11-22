@@ -214,10 +214,14 @@ public class GEDCOMReader {
                 System.out.println("  Wife: " + wifeName);
                 
                 //US39
-                if (family.getIsAnniSoon() == true)
+                if (family.getIsAnniSoon() == null){
+                	continue;
+                }
+                else if (family.getIsAnniSoon() == true)
                 {
                 	System.out.println("Their anniversary will be coming up in a month");
                 }
+                
             }
         } catch(GEDCOMParseException e) {
             error(e.getMessage());
@@ -249,6 +253,7 @@ public class GEDCOMReader {
         gedcom_functions.add(new UpcomingBirthdays());
         gedcom_functions.add(new NoMarriagesToDescendants());
         gedcom_functions.add(new SiblingsShouldNotMarry());
+        gedcom_functions.add(new ListLivingSingles());
         gedcom_functions.add(new ListOrphans());
 
         for(GEDCOMProcessor gedcom_function : gedcom_functions) {

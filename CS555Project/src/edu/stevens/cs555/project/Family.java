@@ -52,6 +52,8 @@ public class Family extends GEDCOMRecord {
     
     private Boolean isAnniSoon;
     
+    private Boolean isMarried;
+    
     /**
      * The DIVORCE date for the family.
      */
@@ -164,6 +166,7 @@ public class Family extends GEDCOMRecord {
      */
     public void setMarr(String marr) {
         this.marr = marr;
+        this.isMarried = true;
         try {
     	    this.marrDate = formatter.parse(marr);
     	    this.isAnniSoon = isAnniversarySoon(marrDate);
@@ -181,6 +184,14 @@ public class Family extends GEDCOMRecord {
         return this.isAnniSoon;
     }
     
+    /**
+     * Get isAnniSoon.
+     * 
+     * @return if the Anniversary is coming up.
+     */
+    public Boolean getIsMarried() {
+        return this.isMarried;
+    }
     /**
      * Get the divorce date for the family.
      * 

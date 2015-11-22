@@ -1,176 +1,109 @@
-
+Reading GEDCOM file at "C:\Users\Kev\Documents\CS555\W11\test_file.ged"...
 
 Individuals:
 
 1 John /Doe/
-Age is 85 
+Age: 85 
 2 Bill /Taylor/
-Age is 62 
+Age: 62 
 3 Meghan /Thompson/
-Age is 63 
+Age: 63 
 4 Jane /Taylor/
-Age is 215 
+Age: 215 
 5 Tim /Taylor/
-Age is 55 
+Age: 55 
 6 Bob /Taylor/
-Age is 39 
+Age: 39 
 7 Angela /Johnson/
-Age is 38 
+Age: 38 
 8 Jill /Taylor/
-Age is 60 
-9 David /Price/
-Age is 59 
-10 Ashley /Taylor/
-Age is 11 
-11 Samantha /Murphy/
-Age is 37 
-12 Ron /Murphy/
-Age is 37 
-13 Tom /Ford/
-Age is 38 
-14 William /Ford/
-Age is 14 
-15 Alison /Murphy/
-Age is 3 
-16 Mike /Taylor/
-Age is 37 
-17 Jane /Price/
-Age is 36 
-18 Happy /Gilmore/
-Age is 36 
-19 Peter /Taylor/
-Age is 57 
-20 Samantha /Ryan/
-Age is 58 
-21 James /Taylor/
-Age is 55 
-22 Jordan /Taylor/
-Age is 56 
-23 Dan /Gilmore/
-Age is -2 
-24 Mark /Price/
-Age is 25 
+Age: 60 
+9 Gilmore /Gilmore/
+Age: 28 
+10 David /Price/
+Age: 59 
+11 Ashley /Taylor/
+Age: 11 
+12 Samantha /Murphy/
+Age: 37 
+13 Ron /Murphy/
+Age: 37 
+14 Tom /Ford/
+Age: 38 
+15 William /Ford/
+Age: 14 
+16 Alison /Murphy/
+Age: 3 
+17 Mike /Taylor/
+Age: 37 
+18 Jane /Price/
+Age: 36 
+19 Happy /Gilmore/
+Age: 36 
+20 Peter /Taylor/
+Age: 57 
+21 Samantha /Ryan/
+Age: 58 
+22 James /Taylor/
+Age: 55 
+23 Jordan /Taylor/
+Age: 56 
+24 Dan /Gilmore/
+Age: -2 
 25 Mark /Price/
-Age is 25 
-26 Ron /Murphy/
-Age is 37 
-27 Samantha /Murphy/
-Age is 29 
-28 Ryan /Taylor/
-Age is 1 
-29 Kim /Kardasian/
-Age is 30 
-30 Kanye /West/
-Age is 30 
-31 Bday /West/
-Age is 35 
-32 Angelina /Taylor/
-Age is 30 
-33 Brad /Pitt/
-Age is 30 
-34 Ben /Pitt/
-Age is 30 
-35 Donna /Pitt/
-Age is 29 
-36 Harry /Gilmore/
-Age is 28 
-37 George /Knox/
-Age is 25 
-38 Frank /Taylor/
-Age is 58 
+Age: 25 
+26 George /Knox/
+Age: 25 
+27 Mark /Price/
+Age: 25 
+28 Ron /Murphy/
+Age: 37 
+29 Samantha /Murphy/
+Age: 29 
+30 Ryan /Taylor/
+Age: 1 
+31 Kim /Kardasian/
+Age: 30 
+32 Kanye /West/
+Age: 30 
+33 Bday /West/
+Age: 35 
+34 Angelina /Taylor/
+Age: 30 
+35 Brad /Pitt/
+Age: 30 
+36 Pitt /Pitt/
+Age: 30 
+37 Donna /Pitt/
+Age: 29 
+38 Taylor /Taylor/
+Age: 58 
 39 Steven /Taylor/
-Age is 56 
-40 Jane /Taylor/
-Age is 56 
-41 Mary /Taylor/
-Age is 55 
-42 Adam /Taylor/
-Age is 54 
-43 Roger /Taylor/
-Age is 53 
-44 Roger /Taylor/
-Age is 52 
+Age: 56 
+40 Taylor /Taylor/
+Age: 56 
+41 Taylor /Taylor/
+Age: 55 
+42 Taylor /Taylor/
+Age: 54 
+43 Taylor /Taylor/
+Age: 53 
+44 Taylor /Taylor/
+Age: 52 
 45 Brandon /Taylor/
-Age is 51 
-46 Chris /Taylor/
-Age is 50 
-47 Jimmy /Taylor/
-Age is 48 
-48 Jason /Taylor/
-Individuals:
-
-1 John /Doe/
-Age is 85 
-2 Bill /Taylor/
-Age is 62 
-3 Meghan /Thompson/
-Age is 63 
-4 Jane /Taylor/
-Age is 215 
-5 Tim /Taylor/
-Age is 55 
-6 Bob /Taylor/
-Age is 39 
-7 Angela /Johnson/
-Age is 38 
-8 Jill /Taylor/
-Age is 60 
-9 David /Price/
-Age is 59 
-10 Ashley /Taylor/
-Age is 11 
-11 Samantha /Murphy/
-Age is 37 
-12 Ron /Murphy/
-Age is 37 
-13 Tom /Ford/
-Age is 38 
-14 William /Ford/
-Age is 14 
-15 Alison /Murphy/
-Age is 3 
-16 Mike /Taylor/
-Age is 37 
-17 Jane /Price/
-Age is 36 
-18 Happy /Gilmore/
-Age is 36 
-19 Peter /Taylor/
-Age is 57 
-20 Samantha /Ryan/
-Age is 58 
-21 James /Taylor/
-Age is 55 
-22 Jordan /Taylor/
-Age is 56 
-23 Dan /Gilmore/
-Age is -2 
-24 Mark /Price/
-Age is 25 
-25 Mark /Price/
-Age is 25 
-26 Ron /Murphy/
-Age is 37 
-27 Samantha /Murphy/
-Age is 29 
-28 Ryan /Taylor/
-Age is 1 
-29 Kim /Kardasian/
-Age is 30 
-30 Kanye /West/
-Age is 30 
-31 Bday /West/
-Age is 35 
-32 Angelina /Taylor/
-Age is 30 
-33 Brad /Pitt/
-Age is 30 
-34 Ben /Pitt/
-Age is 30 
-35 Donna /Pitt/
-Age is 29 
-36 Harry /Gilmore/
-Age is 28 
+Age: 51 
+46 Taylor /Taylor/
+Age: 50 
+47 Taylor /Taylor/
+Age: 48 
+48 Taylor /Taylor/
+Age: 49 
+49 Squarepants /Squarepants/
+Age: 49 
+50 SquareBlouse /SquareBlouse/
+Age: 49 
+51 Squarepants /Squarepants/
+Age: 15 
 
 
 Families:
@@ -185,185 +118,100 @@ Families:
   Husband: Bob /Taylor/
   Wife: Angela /Johnson/
 4
-  Husband: David /Price/
+  Husband: Gilmore /Gilmore/
   Wife: Jill /Taylor/
 5
-  Husband: Ron /Murphy/
-  Wife: Samantha /Murphy/
-6
-  Husband: Tom /Ford/
-  Wife: Samantha /Murphy/
-7
-  Husband: Happy /Gilmore/
-  Wife: Jane /Price/
-8
-  Husband: Peter /Taylor/
-  Wife: Samantha /Ryan/
-9
-  Husband: James /Taylor/
-  Wife: Jordan /Taylor/
-10
-  Husband: Ron /Murphy/
-  Wife: Samantha /Murphy/
-11
-  Husband: Kanye /West/
-  Wife: Kim /Kardasian/
-12
-  Husband: Brad /Pitt/
-  Wife: Angelina /Taylor/
-13
-  Husband: Ben /Pitt/
-  Wife: Donna /Pitt/
-14
-  Husband: Harry /Gilmore/
-  Wife: Jill /Taylor/
-
-The following validation anomalies were found with the GEDCOM file...
-
-	Anomaly with the record at line 225: A record with the same name and birth date as this individual already exists!
-	Anomaly with the record at line 233: A record with the same name and birth date as this individual already exists!
-	Anomaly with the record at line 40: Jane /Taylor/ lived to be over 150 years old.
-	Anomaly with the record at line 14: John /Doe/ is deceased.
-	Anomaly with the record at line 40: Jane /Taylor/ is deceased.
-	Anomaly with the record at line 118: Tom /Ford/ is deceased.
-	Anomaly with the record at line 144: Mike /Taylor/ is deceased.
-	Anomaly with the record at line 171: Peter /Taylor/ is deceased.
-	Anomaly with the record at line 199: Jordan /Taylor/ is deceased.
-	Anomaly with the record at line 258: Kim /Kardasian/ is deceased.
-	Anomaly with the record at line 268: Kanye /West/ is deceased.
-	Anomaly with the record at line 144: Mike /Taylor/ 's Deathdate is earlier than birth date
-	Anomaly with the record at line 23: Bill /Taylor/ 's Marriage Date is earlier than birth date
-	Anomaly with the record at line 67: Angela /Johnson/ 's Marriage Date is earlier than birth date
-	Anomaly with the record at line 414: Divorce date is after current date.
-	Anomaly with the record at line 209: Birth date is after current date.
-	Anomaly with the record at line 402: Marriage date is invalid: 40 JUL 1988
-	Anomaly with the record at line 209: Dan /Gilmore/ was born in the last 30 days.
-	Anomaly with the record at line 14: John /Doe/ died in the last 30 days.
-	Anomaly with the record at line 118: Tom /Ford/ 's Death Date is earlier than Marriage date
-	Anomaly with the record at line 58: Birth date of child is before parents' marriage date.
-	Anomaly with the record at line 100: Birth date of child is before parents' marriage date.
-	Anomaly with the record at line 136: Birth date of child is before parents' marriage date.
-	Anomaly with the record at line 314: Birth date of child is before parents' marriage date.
-	Anomaly with the record at line 304: Birth date of child is before parents' marriage date.
-	Anomaly with the record at line 250: Birth date of child is after mother's death.
-	Anomaly with the record at line 225: There already exists an individual with the same name and birth date as this individual within the same family!
-	Anomaly with the record at line 408: A family record with the same husband's name, wife's name, and marriage date as this family already exists!
-	Anomaly with the record at line 23: Bill /Taylor/ 's Age at Marriage is less than  14
-	Anomaly with the record at line 67: Angela /Johnson/ 's Age at Marriage is less than  14
-	Anomaly with the record at line 92: Ashley /Taylor/ 's Age at Marriage is less than  14
-	Anomaly with the record at line 128: William /Ford/ 's Age at Marriage is less than  14
-	Anomaly with the record at line 334: Male family members have different last names.
-	Anomaly with the record at line 278: Bday /West/'s birthday occurs in the next 30 days!
-	Anomaly with the record at line 324: Harry /Gilmore/ cannot be married to a parent he/she descended from!
-	Anomaly with the record at line 314: Donna /Pitt/ cannot be married to a sibling!
-	Anomaly with the record at line 304: Ben /Pitt/ cannot be married to a sibling!
-
-Age is 49 
-
-
-Families:
-
-1
-  Husband: Bill /Taylor/
-  Wife: Meghan /Thompson/
-2
-  Husband: Tim /Taylor/
-  Wife: Jane /Taylor/
-3
-  Husband: Bob /Taylor/
-  Wife: Angela /Johnson/
-4
   Husband: David /Price/
   Wife: Jill /Taylor/
-5
-  Husband: Ron /Murphy/
-  Wife: Samantha /Murphy/
 6
-  Husband: Tom /Ford/
-  Wife: Samantha /Murphy/
-7
   Husband: Happy /Gilmore/
   Wife: Jane /Price/
-8
-  Husband: Peter /Taylor/
-  Wife: Samantha /Ryan/
-9
-  Husband: James /Taylor/
-  Wife: Jordan /Taylor/
-10
+7
   Husband: Ron /Murphy/
   Wife: Samantha /Murphy/
+8
+  Husband: Tom /Ford/
+  Wife: Samantha /Murphy/
+9
+  Husband: Peter /Taylor/
+  Wife: Samantha /Ryan/
+10
+  Husband: James /Taylor/
+  Wife: Jordan /Taylor/
 11
-  Husband: Kanye /West/
-  Wife: Kim /Kardasian/
-12
-  Husband: Brad /Pitt/
-  Wife: Angelina /Taylor/
-13
-  Husband: Ben /Pitt/
-  Wife: Donna /Pitt/
-14
-  Husband: Harry /Gilmore/
-  Wife: Jill /Taylor/
-15
   Husband: Mark /Price/
   Wife: George /Knox/
-3
+12
+  Husband: Ron /Murphy/
+  Wife: Samantha /Murphy/
+13
+  Husband: Kanye /West/
+  Wife: Kim /Kardasian/
+14
+  Husband: Brad /Pitt/
+  Wife: Angelina /Taylor/
+Their anniversary will be coming up in a month
+15
+  Husband: Pitt /Pitt/
+  Wife: Donna /Pitt/
 16
-1
-5
-1
-1
-2
-0
-0
-0
-0
-2
-0
-0
-0
+  Husband: Squarepants /Squarepants/
+  Wife: SquareBlouse /SquareBlouse/
 
 The following validation anomalies were found with the GEDCOM file...
 
-	Anomaly with the record at line 225: A record with the same name and birth date as this individual already exists!
-	Anomaly with the record at line 233: A record with the same name and birth date as this individual already exists!
+	Anomaly with the record at line 246: A record with the same name and birth date as this individual already exists!
+	Anomaly with the record at line 254: A record with the same name and birth date as this individual already exists!
 	Anomaly with the record at line 40: Jane /Taylor/ lived to be over 150 years old.
 	Anomaly with the record at line 14: John /Doe/ is deceased.
 	Anomaly with the record at line 40: Jane /Taylor/ is deceased.
-	Anomaly with the record at line 118: Tom /Ford/ is deceased.
-	Anomaly with the record at line 144: Mike /Taylor/ is deceased.
-	Anomaly with the record at line 171: Peter /Taylor/ is deceased.
-	Anomaly with the record at line 199: Jordan /Taylor/ is deceased.
-	Anomaly with the record at line 258: Kim /Kardasian/ is deceased.
-	Anomaly with the record at line 268: Kanye /West/ is deceased.
-	Anomaly with the record at line 144: Mike /Taylor/ 's Deathdate is earlier than birth date
+	Anomaly with the record at line 129: Tom /Ford/ is deceased.
+	Anomaly with the record at line 155: Mike /Taylor/ is deceased.
+	Anomaly with the record at line 182: Peter /Taylor/ is deceased.
+	Anomaly with the record at line 210: Jordan /Taylor/ is deceased.
+	Anomaly with the record at line 279: Kim /Kardasian/ is deceased.
+	Anomaly with the record at line 289: Kanye /West/ is deceased.
+	Anomaly with the record at line 433: Squarepants /Squarepants/ is deceased.
+	Anomaly with the record at line 443: SquareBlouse /SquareBlouse/ is deceased.
+	Anomaly with the record at line 155: Mike /Taylor/ 's Deathdate is earlier than birth date
 	Anomaly with the record at line 23: Bill /Taylor/ 's Marriage Date is earlier than birth date
-	Anomaly with the record at line 67: Angela /Johnson/ 's Marriage Date is earlier than birth date
-	Anomaly with the record at line 522: Divorce date is after current date.
-	Anomaly with the record at line 209: Birth date is after current date.
-	Anomaly with the record at line 510: Marriage date is invalid: 40 JUL 1988
-	Anomaly with the record at line 209: Dan /Gilmore/ was born in the last 30 days.
-	Anomaly with the record at line 14: John /Doe/ died in the last 30 days.
-	Anomaly with the record at line 118: Tom /Ford/ 's Death Date is earlier than Marriage date
+	Anomaly with the record at line 85: Gilmore /Gilmore/ 's Marriage Date is earlier than birth date
+	Anomaly with the record at line 147: Alison /Murphy/ 's Marriage Date is earlier than birth date
+	Anomaly with the record at line 566: Divorce date is after current date.
+	Anomaly with the record at line 220: Birth date is after current date.
+	Anomaly with the record at line 548: Marriage date is invalid: 40 JUL 1988
+	Anomaly with the record at line 220: Dan /Gilmore/ was born in the last 30 days.
 	Anomaly with the record at line 58: Birth date of child is before parents' marriage date.
-	Anomaly with the record at line 100: Birth date of child is before parents' marriage date.
-	Anomaly with the record at line 136: Birth date of child is before parents' marriage date.
-	Anomaly with the record at line 314: Birth date of child is before parents' marriage date.
-	Anomaly with the record at line 304: Birth date of child is before parents' marriage date.
-	Anomaly with the record at line 250: Birth date of child is after mother's death.
-	Anomaly with the record at line 225: There already exists an individual with the same name and birth date as this individual within the same family!
-	Anomaly with the record at line 516: A family record with the same husband's name, wife's name, and marriage date as this family already exists!
-	Anomaly with the record at line 440: Family has 15 or more siblings.
+	Anomaly with the record at line 111: Birth date of child is before parents' marriage date.
+	Anomaly with the record at line 147: Birth date of child is before parents' marriage date.
+	Anomaly with the record at line 325: Birth date of child is before parents' marriage date.
+	Anomaly with the record at line 335: Birth date of child is before parents' marriage date.
+	Anomaly with the record at line 453: Birth date of child is before parents' marriage date.
+	Anomaly with the record at line 271: Birth date of child is after mother's death.
+	Anomaly with the record at line 246: There already exists an individual with the same name and birth date as this individual within the same family!
+	Anomaly with the record at line 560: A family record with the same husband's name, wife's name, and marriage date as this family already exists!
+	Anomaly with the record at line 470: Family has 15 or more siblings.
 	Anomaly with the record at line 23: Bill /Taylor/ 's Age at Marriage is less than  14
-	Anomaly with the record at line 67: Angela /Johnson/ 's Age at Marriage is less than  14
-	Anomaly with the record at line 92: Ashley /Taylor/ 's Age at Marriage is less than  14
-	Anomaly with the record at line 128: William /Ford/ 's Age at Marriage is less than  14
-	Anomaly with the record at line 136: Alison /Murphy/ 's Age at Marriage is less than  14
-	Anomaly with the record at line 431: Male family members have different last names.
-	Anomaly with the record at line 550: Wife George /Knox/ is not a female.
-	Anomaly with the record at line 278: Bday /West/'s birthday occurs in the next 30 days!
-	Anomaly with the record at line 415: Jimmy /Taylor/'s birthday occurs in the next 30 days!
-	Anomaly with the record at line 324: Harry /Gilmore/ cannot be married to a parent he/she descended from!
-	Anomaly with the record at line 314: Donna /Pitt/ cannot be married to a sibling!
-	Anomaly with the record at line 304: Ben /Pitt/ cannot be married to a sibling!
+	Anomaly with the record at line 58: Bob /Taylor/ 's Age at Marriage is less than  14
+	Anomaly with the record at line 85: Gilmore /Gilmore/ 's Age at Marriage is less than  14
+	Anomaly with the record at line 103: Ashley /Taylor/ 's Age at Marriage is less than  14
+	Anomaly with the record at line 139: William /Ford/ 's Age at Marriage is less than  14
+	Anomaly with the record at line 147: Alison /Murphy/ 's Age at Marriage is less than  14
+	Anomaly with the record at line 461: Male family members have different last names.
+	Anomaly with the record at line 554: Wife George /Knox/ is not a female.
+	Anomaly with the record at line 75: Jill /Taylor/'s birthday occurs in the next 30 days!
+	Anomaly with the record at line 210: Jordan /Taylor/'s birthday occurs in the next 30 days!
+	Anomaly with the record at line 299: Bday /West/'s birthday occurs in the next 30 days!
+	Anomaly with the record at line 417: Taylor /Taylor/'s birthday occurs in the next 30 days!
+	Anomaly with the record at line 85: Gilmore /Gilmore/ cannot be married to a parent he/she descended from!
+	Anomaly with the record at line 325: Pitt /Pitt/ cannot be married to a sibling!
+	Anomaly with the record at line 335: Donna /Pitt/ cannot be married to a sibling!
+	Anomaly with the record at line 32: Meghan /Thompson/ is a Living Single.
+	Anomaly with the record at line 50: Tim /Taylor/ is a Living Single.
+	Anomaly with the record at line 67: Angela /Johnson/ is a Living Single.
+	Anomaly with the record at line 95: David /Price/ is a Living Single.
+	Anomaly with the record at line 121: Ron /Murphy/ is a Living Single.
+	Anomaly with the record at line 174: Happy /Gilmore/ is a Living Single.
+	Anomaly with the record at line 193: Samantha /Ryan/ is a Living Single.
+	Anomaly with the record at line 299: Bday /West/ is a Living Single.
+	Anomaly with the record at line 453: Squarepants /Squarepants/ is orphaned.

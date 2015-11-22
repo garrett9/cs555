@@ -45,7 +45,7 @@ public class Individual extends GEDCOMRecord {
     private int fams;
 
     /**
-     * The age of the indiviual
+     * The age of the individual
      */
     
     private int age;
