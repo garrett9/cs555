@@ -216,7 +216,7 @@ public class Individual extends GEDCOMRecord {
      * @param deat The death date of the individual.
      * also checks if the death date is valid and return true also false when called
     */ 
-    public void setDeat(String deat) {
+    public void setDeat(String deat) {    	
 	    this.deat = deat;
     }
     

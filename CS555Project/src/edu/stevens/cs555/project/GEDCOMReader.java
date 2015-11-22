@@ -249,6 +249,7 @@ public class GEDCOMReader {
         gedcom_functions.add(new UpcomingBirthdays());
         gedcom_functions.add(new NoMarriagesToDescendants());
         gedcom_functions.add(new SiblingsShouldNotMarry());
+        gedcom_functions.add(new ListOrphans());
 
         for(GEDCOMProcessor gedcom_function : gedcom_functions) {
             gedcom_function.run(families, individuals);
