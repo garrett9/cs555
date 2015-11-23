@@ -248,7 +248,7 @@ public class GEDCOMReader {
         gedcom_functions.add(new UniqueFamiliesBySpouses());
         gedcom_functions.add(new FewerThan15Siblings());
         gedcom_functions.add(new MarriageAfter14());
-        gedcom_functions.add(new MaleLastNames());
+        //gedcom_functions.add(new MaleLastNames());
         gedcom_functions.add(new GenderRoles());
         gedcom_functions.add(new UpcomingBirthdays());
         gedcom_functions.add(new NoMarriagesToDescendants());
@@ -257,6 +257,7 @@ public class GEDCOMReader {
         gedcom_functions.add(new ListOrphans());
         gedcom_functions.add(new ListRecentSurvivors());
         gedcom_functions.add(new ListMultipleBirths());
+        gedcom_functions.add(new ListLivingMarried());
 
         for(GEDCOMProcessor gedcom_function : gedcom_functions) {
             gedcom_function.run(families, individuals);
