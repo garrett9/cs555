@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * The executable class for executing the command line interface for reading GEDCOM files.
@@ -202,16 +204,44 @@ public class GEDCOMReader {
                     continue;
                 }
 
+                // Get husband
                 Individual husband = individuals[family.getHusb()];
                 String husbandName = husband != null ? husband.getName() : "";
 
+                // Get wife
                 Individual wife = individuals[family.getWife()];
                 String wifeName = wife != null ? wife.getName() : "";
                 
+                // Get children and sort by age
+                ArrayList<Individual> children = new ArrayList<>();
+                for (int childId : family.getChildren()) {
+                	Individual child = individuals[childId];
+                	children.add(child);
+                }
+                Collections.sort(children, new Comparator<Individual>() {
+                	@Override
+                	public int compare(Individual individual1, Individual individual2) {
+                		return individual2.getAge() - individual1.getAge();
+                	}
+				});
+                ArrayList<String> childNames = new ArrayList<>();
+                for (Individual child : children) {
+                	childNames.add(child.getName() + " (age: " + child.getAge() + ")");
+                }
                 		
                 System.out.println(family.getId());
                 System.out.println("  Husband: " + husbandName);
                 System.out.println("  Wife: " + wifeName);
+                
+                if (children.isEmpty()) {
+                	System.out.println("  no children");
+                }
+                else {
+                	System.out.println("  Children (by age):");
+                    for (String childName : childNames) {
+                    	System.out.println("    " + childName);
+                    }
+                }
                 
                 //US39
                 if (family.getIsAnniSoon() == null){

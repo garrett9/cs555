@@ -1,4 +1,4 @@
-Reading GEDCOM file at "C:\Users\Kev\Documents\CS555\W11\test_file.ged"...
+Reading GEDCOM file at "/home/matt/Code/cs555/cs555/CS555Project/./acceptance_test/test_file.ged"...
 
 Individuals:
 
@@ -89,7 +89,7 @@ Age: 54
 43 Taylor /Taylor/
 Age: 53 
 44 Taylor /Taylor/
-Age: 52 
+Age: 51 
 45 Brandon /Taylor/
 Age: 51 
 46 Taylor /Taylor/
@@ -111,52 +111,100 @@ Families:
 1
   Husband: Bill /Taylor/
   Wife: Meghan /Thompson/
+  Children (by age):
+    Bob /Taylor/ (age: 39)
+    Mike /Taylor/ (age: 37)
+    Ron /Murphy/ (age: 37)
 2
   Husband: Tim /Taylor/
   Wife: Jane /Taylor/
+  Children (by age):
+    Bill /Taylor/ (age: 62)
+    Jill /Taylor/ (age: 60)
+    Taylor /Taylor/ (age: 58)
+    Peter /Taylor/ (age: 57)
+    Steven /Taylor/ (age: 56)
+    Taylor /Taylor/ (age: 56)
+    James /Taylor/ (age: 55)
+    Taylor /Taylor/ (age: 55)
+    Taylor /Taylor/ (age: 54)
+    Taylor /Taylor/ (age: 53)
+    Taylor /Taylor/ (age: 51)
+    Brandon /Taylor/ (age: 51)
+    Taylor /Taylor/ (age: 50)
+    Taylor /Taylor/ (age: 49)
+    Taylor /Taylor/ (age: 48)
+    Ryan /Taylor/ (age: 1)
 3
   Husband: Bob /Taylor/
   Wife: Angela /Johnson/
+  Children (by age):
+    Ashley /Taylor/ (age: 11)
 4
   Husband: Gilmore /Gilmore/
   Wife: Jill /Taylor/
+  no children
 5
   Husband: David /Price/
   Wife: Jill /Taylor/
+  Children (by age):
+    Samantha /Murphy/ (age: 37)
+    Jane /Price/ (age: 36)
+    Angelina /Taylor/ (age: 30)
+    Mark /Price/ (age: 25)
+    Mark /Price/ (age: 25)
 6
   Husband: Happy /Gilmore/
   Wife: Jane /Price/
+  Children (by age):
+    Gilmore /Gilmore/ (age: 28)
+    Dan /Gilmore/ (age: -2)
 7
   Husband: Ron /Murphy/
   Wife: Samantha /Murphy/
+  Children (by age):
+    Alison /Murphy/ (age: 3)
 8
   Husband: Tom /Ford/
   Wife: Samantha /Murphy/
+  Children (by age):
+    William /Ford/ (age: 14)
 9
   Husband: Peter /Taylor/
   Wife: Samantha /Ryan/
+  no children
 10
   Husband: James /Taylor/
   Wife: Jordan /Taylor/
+  no children
 11
   Husband: Mark /Price/
   Wife: George /Knox/
+  no children
 12
   Husband: Ron /Murphy/
   Wife: Samantha /Murphy/
+  no children
 13
   Husband: Kanye /West/
   Wife: Kim /Kardasian/
+  no children
 14
   Husband: Brad /Pitt/
   Wife: Angelina /Taylor/
+  Children (by age):
+    Pitt /Pitt/ (age: 30)
+    Donna /Pitt/ (age: 29)
 Their anniversary will be coming up in a month
 15
   Husband: Pitt /Pitt/
   Wife: Donna /Pitt/
+  no children
 16
   Husband: Squarepants /Squarepants/
   Wife: SquareBlouse /SquareBlouse/
+  Children (by age):
+    Squarepants /Squarepants/ (age: 15)
 
 The following validation anomalies were found with the GEDCOM file...
 
@@ -181,13 +229,13 @@ The following validation anomalies were found with the GEDCOM file...
 	Anomaly with the record at line 220: Birth date is after current date.
 	Anomaly with the record at line 548: Marriage date is invalid: 40 JUL 1988
 	Anomaly with the record at line 220: Dan /Gilmore/ was born in the last 30 days.
+	Anomaly with the record at line 40: Jane /Taylor/ died in the last 30 days.
 	Anomaly with the record at line 58: Birth date of child is before parents' marriage date.
 	Anomaly with the record at line 111: Birth date of child is before parents' marriage date.
 	Anomaly with the record at line 147: Birth date of child is before parents' marriage date.
 	Anomaly with the record at line 325: Birth date of child is before parents' marriage date.
 	Anomaly with the record at line 335: Birth date of child is before parents' marriage date.
 	Anomaly with the record at line 453: Birth date of child is before parents' marriage date.
-	Anomaly with the record at line 271: Birth date of child is after mother's death.
 	Anomaly with the record at line 246: There already exists an individual with the same name and birth date as this individual within the same family!
 	Anomaly with the record at line 560: A family record with the same husband's name, wife's name, and marriage date as this family already exists!
 	Anomaly with the record at line 470: Family has 15 or more siblings.
@@ -197,7 +245,6 @@ The following validation anomalies were found with the GEDCOM file...
 	Anomaly with the record at line 103: Ashley /Taylor/ 's Age at Marriage is less than  14
 	Anomaly with the record at line 139: William /Ford/ 's Age at Marriage is less than  14
 	Anomaly with the record at line 147: Alison /Murphy/ 's Age at Marriage is less than  14
-	Anomaly with the record at line 461: Male family members have different last names.
 	Anomaly with the record at line 554: Wife George /Knox/ is not a female.
 	Anomaly with the record at line 75: Jill /Taylor/'s birthday occurs in the next 30 days!
 	Anomaly with the record at line 210: Jordan /Taylor/'s birthday occurs in the next 30 days!
@@ -215,3 +262,64 @@ The following validation anomalies were found with the GEDCOM file...
 	Anomaly with the record at line 193: Samantha /Ryan/ is a Living Single.
 	Anomaly with the record at line 299: Bday /West/ is a Living Single.
 	Anomaly with the record at line 453: Squarepants /Squarepants/ is orphaned.
+	Anomaly with the record at line 50: This record has survived his wife, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 23: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 58: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 103: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 254: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 75: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 111: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 139: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 165: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 85: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 220: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 228: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 246: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 306: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 325: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 335: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 201: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 271: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 345: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 353: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 361: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 369: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 377: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 385: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 393: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 401: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 409: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 417: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 425: This record has survived an ancestor, Jane /Taylor/, that has passed away in the last 30 days.
+	Anomaly with the record at line 470: The family at this record has had a multiple birth.
+	Anomaly with the record at line 505: The family at this record has had a multiple birth.
+	Anomaly with the record at line 23: Bill /Taylor/ is living and married.
+	Anomaly with the record at line 58: Bob /Taylor/ is living and married.
+	Anomaly with the record at line 75: Jill /Taylor/ is living and married.
+	Anomaly with the record at line 85: Gilmore /Gilmore/ is living and married.
+	Anomaly with the record at line 103: Ashley /Taylor/ is living and married.
+	Anomaly with the record at line 111: Samantha /Murphy/ is living and married.
+	Anomaly with the record at line 139: William /Ford/ is living and married.
+	Anomaly with the record at line 147: Alison /Murphy/ is living and married.
+	Anomaly with the record at line 165: Jane /Price/ is living and married.
+	Anomaly with the record at line 201: James /Taylor/ is living and married.
+	Anomaly with the record at line 220: Dan /Gilmore/ is living and married.
+	Anomaly with the record at line 228: Mark /Price/ is living and married.
+	Anomaly with the record at line 246: Mark /Price/ is living and married.
+	Anomaly with the record at line 254: Ron /Murphy/ is living and married.
+	Anomaly with the record at line 271: Ryan /Taylor/ is living and married.
+	Anomaly with the record at line 306: Angelina /Taylor/ is living and married.
+	Anomaly with the record at line 325: Pitt /Pitt/ is living and married.
+	Anomaly with the record at line 335: Donna /Pitt/ is living and married.
+	Anomaly with the record at line 345: Taylor /Taylor/ is living and married.
+	Anomaly with the record at line 353: Steven /Taylor/ is living and married.
+	Anomaly with the record at line 361: Taylor /Taylor/ is living and married.
+	Anomaly with the record at line 369: Taylor /Taylor/ is living and married.
+	Anomaly with the record at line 377: Taylor /Taylor/ is living and married.
+	Anomaly with the record at line 385: Taylor /Taylor/ is living and married.
+	Anomaly with the record at line 393: Taylor /Taylor/ is living and married.
+	Anomaly with the record at line 401: Brandon /Taylor/ is living and married.
+	Anomaly with the record at line 409: Taylor /Taylor/ is living and married.
+	Anomaly with the record at line 417: Taylor /Taylor/ is living and married.
+	Anomaly with the record at line 425: Taylor /Taylor/ is living and married.
+	Anomaly with the record at line 453: Squarepants /Squarepants/ is living and married.
